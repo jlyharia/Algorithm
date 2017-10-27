@@ -5,21 +5,6 @@ project(Algorithm)
 if (CMAKE_BUILD_TYPE STREQUAL "")
 	set(CMAKE_BUILD_TYPE Debug)
 endif ()
-# macro - global scope
-#macro(use_cxx17)
-#	if (CMAKE_VERSION VERSION_LESS "3.8")
-#		if (CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
-#			set(CMAKE_CXX_FLAGS "--std=gnu++17 -stdlib=libc++ ${CMAKE_CXX_FLAGS}")
-#		endif ()
-#	else ()
-#		# http://stackoverflow.com/a/31010221
-#
-#		set(CMAKE_CXX_STANDARD 17)
-#		message("-- Set CMAKE_CXX_STANDARD 17")
-#		set(CMAKE_CXX_FLAGS "-Wall")
-#		message("-- CMAKE_CXX_FLAGS = " ${CMAKE_CXX_FLAGS})
-#	endif ()
-#endmacro(use_cxx17)
 
 # ============ main ===================
 # system check
