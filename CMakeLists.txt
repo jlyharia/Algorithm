@@ -27,7 +27,7 @@ endif ()
 
 message("-- CMAKE_CXX_COMPILER_ID = " ${CMAKE_CXX_COMPILER_ID})
 
-# SET( CMAKE_VERBOSE_MAKEFILE on )  # make debug flag
+SET(CMAKE_VERBOSE_MAKEFILE on)  # make debug flag
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_FLAGS "-Wall")
 message("-- CMAKE_CXX_FLAGS = " ${CMAKE_CXX_FLAGS})
@@ -36,20 +36,7 @@ message("-- CMAKE_CXX_FLAGS = " ${CMAKE_CXX_FLAGS})
 SET(EXECUTABLE_OUTPUT_PATH ${PROJECT_BINARY_DIR})
 
 
-# -----------------------------------------------------------------------------
-# include headers
-include_directories(src/Interview src/include src/basic src/leetcodeChallenge)
+add_subdirectory(src)
 
-# include source files
-AUX_SOURCE_DIRECTORY(src/Interview SOURCE_FILES)
-AUX_SOURCE_DIRECTORY(src SOURCE_FILES)
-AUX_SOURCE_DIRECTORY(src/leetcodeChallenge SOURCE_FILES)
-AUX_SOURCE_DIRECTORY(src/basic SOURCE_FILES)
-
-
-message("-- HEADER_FILES: " ${HEADER_FILES})
-message("-- SOURCE_FILES: " ${SOURCE_FILES})
-
-# -----------------------------------------------------------------------------
-
-add_executable(leetcode ${SOURCE_FILES} ${HEADER_FILES})
+#enable_testing ()
+#add_subdirectory (test)
