@@ -38,16 +38,16 @@ SET(EXECUTABLE_OUTPUT_PATH ${PROJECT_BINARY_DIR})
 
 # -----------------------------------------------------------------------------
 # include headers
-include_directories(Interview include basic leetcodeChallenge)
+include_directories(src/Interview src/include src/basic src/leetcodeChallenge)
 
 # include source files
-AUX_SOURCE_DIRECTORY(Interview SOURCE_FILES)
+AUX_SOURCE_DIRECTORY(src/Interview SOURCE_FILES)
 AUX_SOURCE_DIRECTORY(src SOURCE_FILES)
-AUX_SOURCE_DIRECTORY(leetcodeChallenge SOURCE_FILES)
-AUX_SOURCE_DIRECTORY(basic SOURCE_FILES)
+AUX_SOURCE_DIRECTORY(src/leetcodeChallenge SOURCE_FILES)
+AUX_SOURCE_DIRECTORY(src/basic SOURCE_FILES)
 
 
-# message("-- HEADER_FILES: " ${HEADER_FILES})
+message("-- HEADER_FILES: " ${HEADER_FILES})
 message("-- SOURCE_FILES: " ${SOURCE_FILES})
 
 # -----------------------------------------------------------------------------

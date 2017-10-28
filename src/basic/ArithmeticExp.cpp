@@ -5,7 +5,7 @@
  *      Author: johnny
  */
 
-#include "../basic/ArithmeticExp.h"
+#include "ArithmeticExp.h"
 
 ArithmeticExp::ArithmeticExp() {}
 
