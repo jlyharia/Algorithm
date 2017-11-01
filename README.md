@@ -10,4 +10,6 @@ In C++ we tend to define generic types based on other constraints other than "in
 http://stackoverflow.com/a/25216349
 
 
-NetBeans:
+
+CMake structure with gtest
+https://stackoverflow.com/a/37107097

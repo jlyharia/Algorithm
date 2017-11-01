@@ -38,5 +38,5 @@ SET(EXECUTABLE_OUTPUT_PATH ${PROJECT_BINARY_DIR})
 
 add_subdirectory(src)
 
-#enable_testing ()
-#add_subdirectory (test)
+enable_testing ()
+add_subdirectory (test)
