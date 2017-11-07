@@ -8,9 +8,9 @@
 #ifndef LEETCODEHEADERS_HPP_
 #define LEETCODEHEADERS_HPP_
 
-#include "MinStack.hpp"
-#include "MostFrequentElements.hpp"
-#include "Trie.hpp"
+#include <MinStack.hpp>
+#include <MostFrequentElements.hpp>
+#include <Trie.hpp>
 // LeetCode 1 Two Sum 17.7% Medium
 // TODO LeetCode 4    Median of Two Sorted Arrays 17.8% Hard
 // LeetCode 26   Remove Duplicates from Sorted Array 31.5% Easy

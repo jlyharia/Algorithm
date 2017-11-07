@@ -35,8 +35,51 @@ message("-- CMAKE_CXX_FLAGS = " ${CMAKE_CXX_FLAGS})
 # set paths
 SET(EXECUTABLE_OUTPUT_PATH ${PROJECT_BINARY_DIR})
 
+message("-- CMAKE_SOURCE_DIR = " ${CMAKE_SOURCE_DIR})
+
+set(HEADER_FILES
+		${HEADER_FILES}
+		${CMAKE_SOURCE_DIR}/src/basic/ArithmeticExp.h
+		${CMAKE_SOURCE_DIR}/src/basic/Matrix.hpp
+		${CMAKE_SOURCE_DIR}/src/basic/Sorting.hpp
+		${CMAKE_SOURCE_DIR}/src/include/LeetCodeHeaders.hpp
+		${CMAKE_SOURCE_DIR}/src/include/SingleLinkedList.hpp
+		${CMAKE_SOURCE_DIR}/src/include/SortAlgorithm.hpp
+		${CMAKE_SOURCE_DIR}/src/include/Tree.hpp
+		${CMAKE_SOURCE_DIR}/src/include/UndirectedGraphNode.hpp
+		${CMAKE_SOURCE_DIR}/src/Interview/MostFrequentElements.hpp
+		${CMAKE_SOURCE_DIR}/src/leetcodeChallenge/ArrayQuiz.hpp
+		${CMAKE_SOURCE_DIR}/src/leetcodeChallenge/Backtracking.hpp
+		${CMAKE_SOURCE_DIR}/src/leetcodeChallenge/BitMagic.hpp
+		${CMAKE_SOURCE_DIR}/src/leetcodeChallenge/ChallengeBase.hpp
+		${CMAKE_SOURCE_DIR}/src/leetcodeChallenge/DynamicQuiz.hpp
+		${CMAKE_SOURCE_DIR}/src/leetcodeChallenge/Graph.hpp
+		${CMAKE_SOURCE_DIR}/src/leetcodeChallenge/LinkedList.hpp
+		${CMAKE_SOURCE_DIR}/src/leetcodeChallenge/MathQuiz.hpp
+		${CMAKE_SOURCE_DIR}/src/leetcodeChallenge/MatrixQuiz.hpp
+		${CMAKE_SOURCE_DIR}/src/leetcodeChallenge/MinStack.hpp
+		${CMAKE_SOURCE_DIR}/src/leetcodeChallenge/Numbers.hpp
+		${CMAKE_SOURCE_DIR}/src/leetcodeChallenge/StringQuiz.hpp
+		${CMAKE_SOURCE_DIR}/src/leetcodeChallenge/TreeQuiz.hpp
+		${CMAKE_SOURCE_DIR}/src/leetcodeChallenge/Trie.hpp
+		)
+# include headers
+include_directories(${CMAKE_SOURCE_DIR}/src/Interview
+		${CMAKE_SOURCE_DIR}/src/include
+		${CMAKE_SOURCE_DIR}/src/basic
+		${CMAKE_SOURCE_DIR}/src/leetcodeChallenge)
+
+# include source files
+AUX_SOURCE_DIRECTORY(${CMAKE_SOURCE_DIR}/src/Interview SOURCE_FILES)
+AUX_SOURCE_DIRECTORY(${CMAKE_SOURCE_DIR}/src/leetcodeChallenge SOURCE_FILES)
+AUX_SOURCE_DIRECTORY(${CMAKE_SOURCE_DIR}/src/basic SOURCE_FILES)
+message("-- HEADER_FILES: " ${HEADER_FILES})
+message("-- SOURCE_FILES: " ${SOURCE_FILES})
+
+# -----------------------------------------------------------------------------
+add_library(alg ${SOURCE_FILES} ${HEADER_FILES})
 
 add_subdirectory(src)
 
-enable_testing ()
-add_subdirectory (test)
+enable_testing()
+add_subdirectory(test)

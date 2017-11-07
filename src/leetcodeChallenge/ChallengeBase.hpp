@@ -30,11 +30,7 @@ class ChallengeBase {
             cout << endl;
         }
     }
-    // template <typename T> void printVector(const vector<T> &vec) {
-    //     for_each(vec.cbegin(),vec.cend(), [&](decltype(*begin(v)) it){cout<<i<<" ";});
-    //     cout<<endl;
-    // }
-    
+
     virtual ~ChallengeBase() {}
 };
 

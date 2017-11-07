@@ -58,9 +58,5 @@ int main() {
 	MatrixQuiz mxQ;
 	mxQ.test();
 
-
-	int a[2] = {1, 2};
-	auto[x, y] = a;
-	cout << x << endl;
 	return 0;
 }
