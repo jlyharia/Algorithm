@@ -13,3 +13,5 @@ http://stackoverflow.com/a/25216349
 
 CMake structure with gtest
 https://stackoverflow.com/a/37107097
+
+test
