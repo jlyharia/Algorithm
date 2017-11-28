@@ -57,6 +57,5 @@ int main() {
 	//	me.test();
 	MatrixQuiz mxQ;
 	mxQ.test();
-
 	return 0;
 }
