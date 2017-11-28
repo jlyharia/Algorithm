@@ -494,7 +494,7 @@ void DynamicQuiz::test72() {
 }
 
 
-int maximalSquare(vector<vector<char>> &matrix){
+int DynamicQuiz::maximalSquare(vector<vector<char>> &matrix){
 
 	return 0;
 }

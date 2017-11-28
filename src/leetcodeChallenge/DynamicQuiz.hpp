@@ -19,7 +19,7 @@ public:
 
 	~DynamicQuiz() {}
 
-private:
+
 	// LeetCode  5 Longest Palindromic Substring 20.7% Medium
 	std::string longestPalindrome(std::string s);
 

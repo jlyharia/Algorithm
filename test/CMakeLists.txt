@@ -16,12 +16,9 @@ include_directories(${TEST_SOURCE_DIR}/src
 
 
 ADD_TEST_CASE(MatrixQuizTest)
-#add_executable(MatrixQuizTest MatrixQuizTest.cpp)
-#target_link_libraries(MatrixQuizTest alg ${GTEST_BOTH_LIBRARIES})
 ADD_TEST_CASE(ArrayQuizTest)
-#add_executable(ArrayQuizTest ArrayQuizTest.cpp)
-#target_link_libraries(ArrayQuizTest alg ${GTEST_BOTH_LIBRARIES})
+ADD_TEST_CASE(DynamicQuizTest)
 
 add_test(NAME testName
 		COMMAND -test)
-#		WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/test.cpp)
+#		WORKcING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/test.cpp)
