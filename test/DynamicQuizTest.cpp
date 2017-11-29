@@ -7,11 +7,14 @@
 
 using namespace std;
 
+DynamicQuiz dq;
 
 TEST (Dynamic_Programming, Maximal_Square) {
 
-	vector<vector<char>> matrix(2, std::vector<char>(4, '0'));;
-	DynamicQuiz dq;
-	EXPECT_EQ (0, dq.maximalSquare(matrix));
+	vector<vector<char>> matrix {{'1', '0', '1','0', '0'},
+								 {'1', '0', '1','1', '1'},
+								 {'1', '1', '1','1', '1'},
+								 {'1', '0', '0','1', '0'}};
 
+	EXPECT_EQ (0, dq.maximalSquare(matrix));
 }
