@@ -11,10 +11,11 @@ DynamicQuiz dq;
 
 TEST (Dynamic_Programming, Maximal_Square) {
 
-	vector<vector<char>> matrix {{'1', '0', '1','0', '0'},
-								 {'1', '0', '1','1', '1'},
-								 {'1', '1', '1','1', '1'},
-								 {'1', '0', '0','1', '0'}};
+	vector<vector<char>> matrix{{'1', '0', '1', '0', '0', '0'},
+								{'1', '0', '1', '1', '1', '0'},
+								{'1', '1', '1', '1', '1', '0'},
+								{'1', '0', '1', '1', '1', '0'},
+								{'1', '0', '1', '0', '0', '0'}};
 
-	EXPECT_EQ (0, dq.maximalSquare(matrix));
+	EXPECT_EQ (9, dq.maximalSquare(matrix));
 }

@@ -6,7 +6,6 @@
  */
 
 #include "DynamicQuiz.hpp"
-#include <iostream>
 
 using namespace std;
 
@@ -494,9 +493,26 @@ void DynamicQuiz::test72() {
 }
 
 
-int DynamicQuiz::maximalSquare(vector<vector<char>> &matrix){
+int DynamicQuiz::maximalSquare(vector<vector<char>> &matrix) {
+	int ln = 0; // length of the square
+	vector<vector<int>> dp(matrix.size(), vector<int>(matrix[0].size(), 0));
 
-	return 0;
+	for (auto i = 0; i < matrix.size(); i++) {
+		dp[i][0] = matrix[i][0] - '0';
+		ln = std::max(dp[i][0], ln);
+	}
+	for (auto i = 0; i < matrix[0].size(); i++) {
+		dp[0][i] = matrix[0][i] - '0';
+		ln = std::max(dp[0][i], ln);
+	}
+	for (int i = 1; i < matrix.size(); i++) {
+		for (int j = 1; j < matrix[i].size(); j++) {
+			dp[i][j] = matrix[i][j] == '1' ? std::min({dp[i - 1][j], dp[i - 1][j - 1], dp[i][j - 1]}) + 1 : 0;
+			ln = std::max(ln, dp[i][j]);
+		}
+	}
+
+	return ln * ln;
 }
 
 void DynamicQuiz::test() {
