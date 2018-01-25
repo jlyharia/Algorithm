@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.8)
+cmake_minimum_required(VERSION 3.9)
 
 project(Algorithm)
 # Enable debug symbols by default
@@ -9,8 +9,7 @@ endif ()
 # ============ main ===================
 # system check
 IF (${CMAKE_SYSTEM_NAME} MATCHES "Darwin") # check apple
-	MATH(EXPR bits " ${CMAKE_SIZEOF_VOID_P}*8 ")
-	message("-- This environment is ${bits} bits")
+	message("-- CMake is running on OS X")
 endif ()
 
 message("-- Generator is " ${CMAKE_GENERATOR})

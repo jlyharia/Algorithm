@@ -17,6 +17,7 @@ include_directories(${TEST_SOURCE_DIR}/src
 
 ADD_TEST_CASE(MatrixQuizTest)
 ADD_TEST_CASE(ArrayQuizTest)
+ADD_TEST_CASE(BacktrackingQuizTest)
 ADD_TEST_CASE(DynamicQuizTest)
 
 add_test(NAME testName
