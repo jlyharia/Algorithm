@@ -79,6 +79,7 @@ public:
 
 	// 37. Sudoku Solver
 	void solveSudoku(vector<vector<char>> &board);
+	bool validSudokuIdx(vector<vector<char>> &board, int row, int col, char e);
 };
 
 #endif /* BACKTRACKING_HPP_ */

@@ -5,6 +5,7 @@
  *      Author: johnny
  */
 
+#include <Utils.hpp>
 #include "MatrixQuiz.hpp"
 // LeetCode 74 Search a 2D Matrix 33.4 Medium
 void MatrixQuiz::test74() {

@@ -7,6 +7,7 @@
 
 #ifndef CHALLENGEBASE_HPP_
 #define CHALLENGEBASE_HPP_
+
 #include <algorithm>
 #include <array>
 #include <iostream>
@@ -16,22 +17,16 @@
 #include <unordered_map>
 #include <utility>
 #include <vector>
+
 using namespace std;
 
 class ChallengeBase {
-  public:
-    ChallengeBase() {}
+public:
+	ChallengeBase() {}
 
-    virtual void test() = 0;
-    template <typename T> void printMatrix(const vector<vector<T>> &matrix) {
-        for (auto r : matrix) {
-            for (auto e : r)
-                cout << e << " ";
-            cout << endl;
-        }
-    }
+	virtual void test() = 0;
 
-    virtual ~ChallengeBase() {}
+	virtual ~ChallengeBase() {}
 };
 
 #endif /* CHALLENGEBASE_HPP_ */

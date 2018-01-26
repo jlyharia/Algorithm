@@ -38,6 +38,6 @@ TEST (Backtracking, sudokuSolver) {
 			{'.', '.', '.', '4', '1', '9', '.', '.', '5'},
 			{'.', '.', '.', '.', '8', '.', '.', '7', '9'}};
 
-	printMatrix(board);
-//	bt.solveSudoku(board);
+//	printMatrix(board);
+	bt.solveSudoku(board);
 }
