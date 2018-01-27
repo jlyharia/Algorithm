@@ -4,20 +4,10 @@
 
 #include "gtest/gtest.h"
 #include "LeetCodeHeaders.hpp"
-using namespace std;
 
-int isOdd() {
-	return 2;
-}
 
-TEST (arrayTest, haha) {
-	EXPECT_EQ (2, isOdd());
-
-//	vector<vector<int> > matrix = {{1,  3,  5,  7},
-//								   {10, 11, 16, 20},
-//								   {23, 30, 34, 50}};
-//
-//	MatrixQuiz mxQ;
-//	mxQ.test();
-//	cout << searchMatrix(matrix, 50) << endl;
+TEST (ArrayTest, findDuplicate) {
+	ArrayQuiz aq;
+	std::vector<int> vec{1, 2, 3, 4, 5, 6, 5, 7, 8, 9};
+	EXPECT_EQ(5, aq.findDuplicate(vec));
 }

@@ -55,7 +55,7 @@ public:
 
 	void permuteString(std::string str, int i);
 
-	vector<string> mapCode = {"", " ", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz"};
+	const vector<string> mapCode = {"", " ", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz"};
 
 	// LeetCode 22	Generate Parentheses 32.8%	Medium
 	void generateParenthesis(int n);
@@ -79,7 +79,12 @@ public:
 
 	// 37. Sudoku Solver
 	void solveSudoku(vector<vector<char>> &board);
-	bool validSudokuIdx(vector<vector<char>> &board, int row, int col, char e);
+
+	// 44. Wildcard Matching
+	bool isMatch(string s, string p);
+private:
+	bool validSudokuElement(vector<vector<char>> &board, int row, int col, char e);
+	bool sudokudfs(vector<vector<char>> &board, int row, int col);
 };
 
 #endif /* BACKTRACKING_HPP_ */

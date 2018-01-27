@@ -172,7 +172,7 @@ void Backtracking::lcLoop(vector<string> &result, string digits, int i) {
 		result.push_back(digits);
 		return;
 	}
-	string candidate = mapCode[digits[i] - 48];
+	const string candidate = mapCode[digits[i] - 48];
 	for (auto j : candidate) {
 		digits[i] = j;
 		lcLoop(result, digits, i + 1);
@@ -380,18 +380,36 @@ vector<string> Backtracking::findWords(vector<vector<char>> &board, vector<strin
 void Backtracking::test212() { cout << "LeetCode 212 Word Search II	15.4%  Hard" << endl; }
 
 void Backtracking::solveSudoku(vector<vector<char>> &board) {
-
-	const vector<char> candi = {'1', '2', '3', '4', '5', '6', '7', '8', '9'};
-	for(int i =0; i< board.size(); i++){
-		for(int j=0; i<board[i].size(); j++){
-			if(board[i][j] != '.'){
-
-			}
-		}
-	}
+	if (board.empty() || board.size() != 9 || board[0].size() != 9) return;
+	sudokudfs(board, 0, 0);
 }
 
-bool Backtracking::validSudokuIdx(vector<vector<char>> &board, int row, int col, char e) {
+bool Backtracking::sudokudfs(vector<vector<char>> &board, int row, int col) {
+	if (row == 9)
+		return true;
+	if (col > 8)
+		return sudokudfs(board, row + 1, 0);
+
+	if (board[row][col] == '.') {
+		for (int i = 1; i < 10; i++) {
+			char e = (char) (i + '0');
+
+			if (validSudokuElement(board, row, col, e)) {
+				board[row][col] = e;
+				if (sudokudfs(board, row, col + 1))
+					return true;
+				board[row][col] = '.';
+			}
+
+		}
+	} else {
+		return sudokudfs(board, row, col + 1);
+	}
+
+	return false;
+}
+
+bool Backtracking::validSudokuElement(vector<vector<char>> &board, int row, int col, char e) {
 	// horizontal
 	for (auto j = 0; j < board[row].size(); j++) {
 		if (j != col && board[row][j] == e) {
@@ -405,7 +423,7 @@ bool Backtracking::validSudokuIdx(vector<vector<char>> &board, int row, int col,
 		}
 	}
 	// square
-	pair<int, int> left_corner = {row / 3, col / 3};
+	const pair<int, int> left_corner = {(row / 3) * 3, (col / 3) * 3};
 
 	for (int i = left_corner.first; i < left_corner.first + 3; i++) {
 		for (int j = left_corner.second; j < left_corner.second + 3; j++) {
