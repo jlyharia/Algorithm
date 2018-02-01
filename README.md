@@ -23,3 +23,7 @@ Wildcard matching
 3 sum
 4 sum
 求二叉樹中最長的increasing/decreasing path.  這個path可以是從任意節點到另一個節點，只要連通即可。
+
+json to dict
+dict to json
+http://wdxtub.com/interview/14520850402716.html
