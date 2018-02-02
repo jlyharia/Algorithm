@@ -19,6 +19,7 @@ ADD_TEST_CASE(MatrixQuizTest)
 ADD_TEST_CASE(ArrayQuizTest)
 ADD_TEST_CASE(BacktrackingQuizTest)
 ADD_TEST_CASE(DynamicQuizTest)
+ADD_TEST_CASE(StringQuizTest)
 
 add_test(NAME testName
 		COMMAND -test)
