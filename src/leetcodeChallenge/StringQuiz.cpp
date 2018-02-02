@@ -81,7 +81,6 @@ void StringQuiz::test20() {
 bool StringQuiz::isMatch(string s, string p) {
 	if (p.empty()) return s.empty();
 	if (p.size() == 1) {
-		bool ss = (s.size() == 1 && (s[0] == p[0] || p[0] == '.'));
 		return (s.size() == 1 && (s[0] == p[0] || p[0] == '.'));
 	}
 	if (p[1] != '*') {
@@ -95,6 +94,7 @@ bool StringQuiz::isMatch(string s, string p) {
 		}
 		s = s.substr(1);
 	}
+	// match star finish
 	return isMatch(s, p.substr(2));
 }
 

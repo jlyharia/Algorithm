@@ -6,9 +6,10 @@
 #include "LeetCodeHeaders.hpp"
 
 
+StringQuiz sq;
 TEST (StringTest, Regular_expression_match) {
-	StringQuiz sq;
-	std::vector<int> vec{1, 2, 3, 4, 5, 6, 5, 7, 8, 9};
-	cout << endl<<sq.isMatch("bc", ".*") << endl;
-//	EXPECT_EQ(5, aq.findDuplicate(vec));
+	EXPECT_TRUE(sq.isMatch("bc", ".*"));
+	EXPECT_FALSE(sq.isMatch("aaa", "aa"));
+	EXPECT_TRUE(sq.isMatch("aab", "c*a*b"));
+	EXPECT_FALSE(sq.isMatch("abab", "ab*"));
 }
