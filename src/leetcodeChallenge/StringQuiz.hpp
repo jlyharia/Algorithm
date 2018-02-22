@@ -50,8 +50,6 @@ public:
 	string longestCommonPrefix(vector<string> &strs);
 
 	// LeetCode 10 Regular Expression Matching   20.7%   Hard
-	void test10();
-
 	bool isMatch(string s, string p);
 
 	// LeetCode 151 Reverse Words in a String   15.3%   Medium

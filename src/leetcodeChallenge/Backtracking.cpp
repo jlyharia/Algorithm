@@ -435,6 +435,10 @@ bool Backtracking::validSudokuElement(vector<vector<char>> &board, int row, int 
 	return true;
 }
 
+bool Backtracking::isMatchWildcard(string s, string p) {
+
+}
+
 void Backtracking::test() {
 	cout << "__FILE__ : " << __FILE__ << endl;
 	//	string str = "1234";

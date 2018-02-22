@@ -81,7 +81,7 @@ public:
 	void solveSudoku(vector<vector<char>> &board);
 
 	// 44. Wildcard Matching
-	bool isMatch(string s, string p);
+	bool isMatchWildcard(string s, string p);
 private:
 	bool validSudokuElement(vector<vector<char>> &board, int row, int col, char e);
 	bool sudokudfs(vector<vector<char>> &board, int row, int col);

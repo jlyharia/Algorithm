@@ -7,18 +7,19 @@
 
 using namespace std;
 
-template<typename T>
-void printMatrix(vector<vector<T>> mat) {
-	cout << endl;
-	for (auto row: mat) {
-		for (auto e: row) {
-			cout << e << " ";
-		}
-		cout << endl;
-	}
-}
 
 Backtracking bt;
+
+TEST (Backtracking, Wildcard_match) {
+	/**
+		'?' Matches any single character.
+		'*' Matches any sequence of characters (including the empty sequence).
+	 */
+	EXPECT_TRUE(bt.isMatchWildcard("aa", "*"));
+	EXPECT_TRUE(bt.isMatchWildcard("ab", "?*"));
+
+	EXPECT_FALSE(bt.isMatchWildcard("aab", "c*a*b"));
+}
 
 TEST (Backtracking, Sudoku_Solver) {
 

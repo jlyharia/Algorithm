@@ -98,13 +98,6 @@ bool StringQuiz::isMatch(string s, string p) {
 	return isMatch(s, p.substr(2));
 }
 
-void StringQuiz::test10() {
-	cout << "LeetCode 10 Regular Expression Matching   20.7%   Hard" << endl;
-	string s = "aa";
-	string regex = "a";
-	printf("isMatch(\"%s\", \"%s\") = %i", s.c_str(), regex.c_str(), isMatch(s, regex));
-}
-
 /**
  * LeetCode 14  Longest Common Prefix  25.5%  Easy
  * Write a function to find the longest common prefix string amongst an array of
@@ -172,7 +165,6 @@ void StringQuiz::test() {
 
 	cout << "LeetCode 76 Minimum Window Substring 18.7 Hard" << endl;
 	test20();
-	test10();
 	test151();
 }
 

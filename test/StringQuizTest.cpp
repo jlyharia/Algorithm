@@ -7,6 +7,7 @@
 
 
 StringQuiz sq;
+
 TEST (StringTest, Regular_expression_match) {
 	EXPECT_TRUE(sq.isMatch("bc", ".*"));
 	EXPECT_FALSE(sq.isMatch("aaa", "aa"));
