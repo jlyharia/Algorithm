@@ -29,7 +29,6 @@
 #include "ArrayQuiz.hpp"
 #include "Backtracking.hpp"
 
-// TODO LeetCode   3  Longest Substring Without Repeating Characters  21.0%
 // Medium
 // TODO LeetCode   5 Longest Palindromic Substring 20.7% Medium
 // TODO LeetCode 159 Longest Substring with At Most Two Distinct Characters
