@@ -5,7 +5,7 @@
  *      Author: johnny
  */
 #include "TreeQuiz.hpp"
-#include <stack>
+
 BSTstring *TreeQuiz::getSample() {
     //             a
     //	      b          c
@@ -24,6 +24,7 @@ BSTstring *TreeQuiz::getSample() {
 
     return a;
 }
+
 BSTint *TreeQuiz::getSampleInt() {
     //             1
     //	      2          3
@@ -51,15 +52,17 @@ BSTstring *TreeQuiz::invertTree(BSTstring *root) {
     if (root != nullptr) {
         invertTree(root->left);
         invertTree(root->right);
-        swap(root->left, root->right);
+        std::swap(root->left, root->right);
     }
     return root;
 }
+
 void TreeQuiz::test226() {
     cout << "LeetCode 226  Invert Binary Tree  37.3%   Easy" << endl;
     auto root = invertTree(this->getSample());
     this->inorderTranveralRecursive(root);
 }
+
 /**
  * LeetCode 230  Kth Smallest Element in a BST  31.2%  Medium
  * Given a binary search tree, write a function kthSmallest to
@@ -83,6 +86,7 @@ string TreeQuiz::kthSmallest(BSTstring *root, int k) {
     }
     return 0;
 }
+
 void TreeQuiz::test230() {
     cout << "LeetCode 230  Kth Smallest Element in a BST  31.2%  Medium" << endl;
 
@@ -96,6 +100,7 @@ vector<string> TreeQuiz::rightSideView(BSTstring *node) {
     tranverse(node, 1, max);
     return result;
 }
+
 void TreeQuiz::tranverse(BSTstring *node, int level, int &max) {
     if (!node) return;
     if (max < level) {
@@ -105,6 +110,7 @@ void TreeQuiz::tranverse(BSTstring *node, int level, int &max) {
     tranverse(node->right, level + 1, max);
     tranverse(node->left, level + 1, max);
 }
+
 void TreeQuiz::test199() {
     auto *root = getSample();
 
@@ -147,6 +153,7 @@ vector<vector<int>> TreeQuiz::zigzagLevelOrder(BSTint *root) {
     }
     return ret;
 }
+
 void TreeQuiz::test103() {
     cout << "LeetCode 103	Binary Tree Zigzag Level Order Traversal 26.6% Medium" << endl;
     auto sample = this->getSampleInt();
@@ -159,6 +166,36 @@ void TreeQuiz::test103() {
         cout << endl;
     }
 }
+
+vector<vector<int>> TreeQuiz::levelOrder(TreeNode<int> *root) {
+    std::queue<TreeNode<int> *> que = {};
+    que.push(root);
+    vector<vector<int>> ans;
+    vector<int> row;
+    int size = que.size();
+    while (size != 0) {
+        auto front = que.front();
+        if (front != nullptr) {
+            row.push_back(front->data);
+            if (front->left != nullptr) {
+                que.push(front->left);
+            }
+            if (front->right != nullptr) {
+                que.push(front->right);
+            }
+        }
+
+        que.pop();
+        size--;
+        if (size == 0) {
+            size = que.size();
+            ans.push_back(row);
+            row.clear();
+        }
+    }
+
+}
+
 void TreeQuiz::test() {
     //    cout << "-- LeetCode 94 Binary Tree Inorder Traversal 36.1% Medium" <<
     //    endl;
@@ -206,6 +243,7 @@ void TreeQuiz::preorderTranveralRecursive(BSTstring *node) {
         preorderTranveralRecursive(node->right);
     }
 }
+
 void TreeQuiz::preorderTranveralLoop(BSTstring *node) {
     stack<BSTstring *> st;
     auto current = node;
@@ -220,6 +258,7 @@ void TreeQuiz::preorderTranveralLoop(BSTstring *node) {
         }
     }
 }
+
 void TreeQuiz::inorderTranveralRecursive(BSTstring *node) {
     if (node) {
         inorderTranveralRecursive(node->left);
@@ -227,6 +266,7 @@ void TreeQuiz::inorderTranveralRecursive(BSTstring *node) {
         inorderTranveralRecursive(node->right);
     }
 }
+
 /**
  * consider the current node or consider the next node would result in different
  *algorithm
@@ -260,6 +300,7 @@ void TreeQuiz::postorderTranveralRecursive(BSTstring *node) {
         cout << node->data << " ";
     }
 }
+
 /**
  * http://articles.leetcode.com/2010/10/binary-tree-post-order-traversal.html
  */
