@@ -15,9 +15,9 @@ TEST (ArrayTest, findDuplicate) {
 TEST (ArrayTest, lengthOfLongestSubstring) {
     cout << "\nLongest Substring Without Repeating Characters\n";
     string s1 = "abcabcbb";
-    cout << aq.lengthOfLongestSubstring(s1) << endl;
-//    string s2 = "bbbbb";
-//    cout << aq.lengthOfLongestSubstring(s2) << endl;
-//    string s3 = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!\\\"#$%&'()*+,-./:;<=>?@[\\\\]^_`{|}~";
-//    cout << aq.lengthOfLongestSubstring(s3) << endl;
+    EXPECT_EQ(3, aq.lengthOfLongestSubstring(s1));
+    string s2 = "bbbbb";
+    EXPECT_EQ(1, aq.lengthOfLongestSubstring(s2));
+    string s3 = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!\\\"#$%&'()*+,-./:;<=>?@[\\\\]^_`{|}~";
+    EXPECT_EQ(86, aq.lengthOfLongestSubstring(s3));
 }
