@@ -31,10 +31,10 @@ public:
 	void nextPermutation(std::vector<int> &num);
 
 	// LeetCode 46  Permutations  31.8%  Medium
-	std::vector<std::vector<int>> permute(std::vector<int> &num);
+	std::vector<std::vector<int>> permute(std::vector<int> &&nums);
 
 	// LeetCode 47  Permutations II  25.8%  Hard
-	std::vector<std::vector<int>> permuteUnique(std::vector<int> &num);
+	void permuteBacktrack(vector<int> &nums, vector<int> cur, vector<bool> isVisit, vector<vector<int>> &result);
 
 	// LeetCode 51  N-Queens  26.6%  Hard
 	vector<vector<string>> solveNQueens(int n);

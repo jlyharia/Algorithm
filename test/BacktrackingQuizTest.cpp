@@ -11,28 +11,28 @@ using namespace std;
 Backtracking bt;
 
 TEST (Backtracking, Wildcard_match) {
-	/**
-		'?' Matches any single character.
-		'*' Matches any sequence of characters (including the empty sequence).
-	 */
-	EXPECT_TRUE(bt.isMatchWildcard("aa", "*"));
-	EXPECT_TRUE(bt.isMatchWildcard("ab", "?*"));
+    /**
+        '?' Matches any single character.
+        '*' Matches any sequence of characters (including the empty sequence).
+     */
+    EXPECT_TRUE(bt.isMatchWildcard("aa", "*"));
+    EXPECT_TRUE(bt.isMatchWildcard("ab", "?*"));
 
-	EXPECT_FALSE(bt.isMatchWildcard("aab", "c*a*b"));
+    EXPECT_FALSE(bt.isMatchWildcard("aab", "c*a*b"));
 }
 
 TEST (Backtracking, Sudoku_Solver) {
 
-	vector<vector<char>> board{
-			{'5', '3', '.', '.', '7', '.', '.', '.', '.'},
-			{'6', '.', '.', '1', '9', '5', '.', '.', '.'},
-			{'.', '9', '8', '.', '.', '.', '.', '6', '.'},
-			{'8', '.', '.', '.', '6', '.', '.', '.', '3'},
-			{'4', '.', '.', '8', '.', '3', '.', '.', '1'},
-			{'7', '.', '.', '.', '2', '.', '.', '.', '6'},
-			{'.', '6', '.', '.', '.', '.', '2', '8', '.'},
-			{'.', '.', '.', '4', '1', '9', '.', '.', '5'},
-			{'.', '.', '.', '.', '8', '.', '.', '7', '9'}};
+    vector<vector<char>> board{
+            {'5', '3', '.', '.', '7', '.', '.', '.', '.'},
+            {'6', '.', '.', '1', '9', '5', '.', '.', '.'},
+            {'.', '9', '8', '.', '.', '.', '.', '6', '.'},
+            {'8', '.', '.', '.', '6', '.', '.', '.', '3'},
+            {'4', '.', '.', '8', '.', '3', '.', '.', '1'},
+            {'7', '.', '.', '.', '2', '.', '.', '.', '6'},
+            {'.', '6', '.', '.', '.', '.', '2', '8', '.'},
+            {'.', '.', '.', '4', '1', '9', '.', '.', '5'},
+            {'.', '.', '.', '.', '8', '.', '.', '7', '9'}};
 //	5 3 4 6 7 8 9 1 2
 //	6 7 2 1 9 5 3 4 8
 //	1 9 8 3 4 2 5 6 7
@@ -43,8 +43,31 @@ TEST (Backtracking, Sudoku_Solver) {
 //	2 8 7 4 1 9 6 3 5
 //	3 4 5 2 8 6 1 7 9
 
-	bt.solveSudoku(board);
+    bt.solveSudoku(board);
 //	printMatrix(board);
-	EXPECT_EQ('6', board[8][5]);
-	EXPECT_EQ('1', board[8][6]);
+    EXPECT_EQ('6', board[8][5]);
+    EXPECT_EQ('1', board[8][6]);
+}
+
+TEST (Backtracking, Permutation) {
+
+    auto ans = bt.permute({1, 2, 3});
+//    cout << '\n';
+//    for (auto &row: ans) {
+//        for (auto &i: row) {
+//            cout << i << " ";
+//        }
+//        cout << '\n';
+//    }
+    EXPECT_EQ(3, ans[5][0]);
+    EXPECT_EQ(2, ans[5][1]);
+    EXPECT_EQ(1, ans[5][2]);
+
+    auto ans2 = bt.permute({5, 4, 6, 2});
+    for (auto &row: ans2) {
+        for (auto &i: row) {
+            cout << i << " ";
+        }
+        cout << '\n';
+    }
 }
