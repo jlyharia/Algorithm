@@ -446,6 +446,47 @@ bool Backtracking::isMatchWildcard(string s, string p) {
 
 }
 
+vector<vector<int>> Backtracking::combine(int n, int k) {
+    vector<vector<int>> result;
+    int i = 0;
+    vector<int> p(k, 0);
+    while (i >= 0) {
+        p[i]++;
+        if (p[i] > n) {
+            --i;
+        } else if (i == k - 1) {
+            result.push_back(p);
+        } else {
+            ++i;
+            p[i] = p[i - 1];
+        }
+    }
+    return result;
+//    vector<vector<int>> ret;
+//    if (n <= 0) //corner case invalid check
+//        return ret;
+//
+//    vector<int> curr;
+//    combineDFS(ret, curr, n, k, 1); //we pass ret as reference at here
+//    return ret;
+}
+
+void Backtracking::combineDFS(vector<vector<int>> &ret, vector<int> curr, int n, int k, int level) {
+    if (curr.size() == k) {
+        ret.push_back(curr);
+        return;
+    }
+    if (curr.size() > k) { // consider this check to save run time
+        return;
+    }
+
+    for (int i = level; i <= n; ++i) {
+        curr.push_back(i);
+        combineDFS(ret, curr, n, k, i + 1);
+        curr.pop_back();
+    }
+}
+
 void Backtracking::test() {
     cout << "__FILE__ : " << __FILE__ << endl;
     //	string str = "1234";

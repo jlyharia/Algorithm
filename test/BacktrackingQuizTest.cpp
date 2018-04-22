@@ -2,6 +2,7 @@
 // Created by Yihung Lee on 1'.'/31/17.
 //
 
+#include <Utils.hpp>
 #include "gtest/gtest.h"
 #include "LeetCodeHeaders.hpp"
 
@@ -52,22 +53,19 @@ TEST (Backtracking, Sudoku_Solver) {
 TEST (Backtracking, Permutation) {
 
     auto ans = bt.permute({1, 2, 3});
-//    cout << '\n';
-//    for (auto &row: ans) {
-//        for (auto &i: row) {
-//            cout << i << " ";
-//        }
-//        cout << '\n';
-//    }
     EXPECT_EQ(3, ans[5][0]);
     EXPECT_EQ(2, ans[5][1]);
     EXPECT_EQ(1, ans[5][2]);
 
     auto ans2 = bt.permute({5, 4, 6, 2});
-    for (auto &row: ans2) {
-        for (auto &i: row) {
-            cout << i << " ";
-        }
-        cout << '\n';
-    }
+    EXPECT_EQ(2, ans2[23][0]);
+    EXPECT_EQ(6, ans2[23][1]);
+    EXPECT_EQ(4, ans2[23][2]);
+    EXPECT_EQ(5, ans2[23][3]);
+}
+
+// 77. Combinations
+TEST (Backtracking, Combination) {
+    auto ans = bt.combine(4, 2);
+    printMatrix(ans);
 }
