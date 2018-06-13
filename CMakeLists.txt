@@ -61,7 +61,7 @@ set(HEADER_FILES
 		${CMAKE_SOURCE_DIR}/src/leetcodeChallenge/StringQuiz.hpp
 		${CMAKE_SOURCE_DIR}/src/leetcodeChallenge/TreeQuiz.hpp
 		${CMAKE_SOURCE_DIR}/src/leetcodeChallenge/Trie.hpp
-		)
+		${CMAKE_SOURCE_DIR}/src/leetcodeChallenge/DepthFirstSearch.hpp)
 # include headers
 include_directories(${CMAKE_SOURCE_DIR}/src/Interview
 		${CMAKE_SOURCE_DIR}/src/include

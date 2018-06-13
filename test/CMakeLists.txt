@@ -21,6 +21,7 @@ ADD_TEST_CASE(BacktrackingQuizTest)
 ADD_TEST_CASE(DynamicQuizTest)
 ADD_TEST_CASE(StringQuizTest)
 ADD_TEST_CASE(TreeQuizTest)
+ADD_TEST_CASE(DepthFirstSearchTest)
 
 add_test(NAME testName
 		COMMAND -test)
