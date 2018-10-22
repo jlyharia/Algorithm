@@ -101,6 +101,11 @@ public:
     // 3. Longest Substring Without Repeating Characters
     int lengthOfLongestSubstring(string s);
 
+    // 621. Task Scheduler
+    int leastInterval(vector<char>& tasks, int n);
+
+    // 494. Target Sum
+    int findTargetSumWays(vector<int>& nums, int S);
 };
 
 #endif /* ARRAYQUIZ_HPP_ */

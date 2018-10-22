@@ -21,3 +21,9 @@ TEST (ArrayTest, lengthOfLongestSubstring) {
     string s3 = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!\\\"#$%&'()*+,-./:;<=>?@[\\\\]^_`{|}~";
     EXPECT_EQ(86, aq.lengthOfLongestSubstring(s3));
 }
+
+
+TEST (ArrayTest, TaskScheduler) {
+    std::vector<char> tasks = {'A', 'A', 'A', 'B', 'B', 'B'};
+    EXPECT_EQ(8, aq.leastInterval(tasks, 2));
+}

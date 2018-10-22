@@ -22,3 +22,8 @@ TEST (TreeQuiz, level_order) {
 //    }
 //    tq.levelOrder()
 }
+
+TEST (TreeQuiz, str2Tree) {
+    string s = "4(2(3)(1))(6(5))";
+    tq.str2tree(s);
+}

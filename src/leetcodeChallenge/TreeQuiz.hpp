@@ -20,6 +20,8 @@ public:
 
     BSTint *getSampleInt();
 
+    BSTint *str2tree(string s);
+
     void test();
 
     void preorderTranveralRecursive(BSTstring *node);
