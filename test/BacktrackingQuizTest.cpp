@@ -69,3 +69,11 @@ TEST (Backtracking, Combination) {
     auto ans = bt.combine(4, 2);
     printMatrix(ans);
 }
+
+TEST (Backtracking, printBinary) {
+    bt.printBinary(3);
+}
+
+TEST (Backtracking, PermutationII) {
+    bt.permuteUnique({1, 1, 2});
+}

@@ -1,5 +1,4 @@
 /*
- * Permutation.hpp
  *
  *  Created on: Apr 23, 2015
  *      Author: johnny
@@ -83,13 +82,24 @@ public:
 
     vector<vector<int>> combine(int n, int k);
 
+    void printBinary(int numOfDigit);
+
+    // 47. Permutations II
+    vector<vector<int>> permuteUnique(vector<int>&& nums);
+
 private:
+
+    void printBinaryHelper(int numOfDigit, std::string prefix);
+
     bool validSudokuElement(vector<vector<char>> &board, int row, int col, char e);
 
     bool sudokudfs(vector<vector<char>> &board, int row, int col);
 
     void permuteBacktrack(vector<int> &nums, vector<int> cur, vector<bool> isVisit, vector<vector<int>> &result);
-    void combineDFS(vector<vector<int>>& ret, vector<int> curr, int n, int k, int level);
+
+    void combineDFS(vector<vector<int>> &ret, vector<int> curr, int n, int k, int level);
+
+
 };
 
 #endif /* BACKTRACKING_HPP_ */

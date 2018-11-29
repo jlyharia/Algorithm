@@ -81,8 +81,7 @@ vector<vector<int>> Backtracking::permute(vector<int> &&nums) {
         return result;
     }
     vector<bool> isVisit(nums.size(), false);
-    vector<int> cur;
-    permuteBacktrack(nums, cur, isVisit, result);
+    permuteBacktrack(nums, {}, isVisit, result);
     return result;
 }
 
@@ -485,6 +484,23 @@ void Backtracking::combineDFS(vector<vector<int>> &ret, vector<int> curr, int n,
         combineDFS(ret, curr, n, k, i + 1);
         curr.pop_back();
     }
+}
+
+void Backtracking::printBinary(int numOfDigit) {
+    printBinaryHelper(numOfDigit, "");
+}
+
+void Backtracking::printBinaryHelper(int digit, std::string prefix) {
+    if (digit == 0) {
+        cout << prefix << endl;
+    } else {
+        printBinaryHelper(digit - 1, prefix + "0");
+        printBinaryHelper(digit - 1, prefix + "1");
+    }
+}
+
+vector<vector<int>> Backtracking::permuteUnique(vector<int>&& nums){
+
 }
 
 void Backtracking::test() {
