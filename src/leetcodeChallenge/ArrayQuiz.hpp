@@ -8,10 +8,15 @@
 #ifndef ARRAYQUIZ_HPP_
 #define ARRAYQUIZ_HPP_
 
+#include <vector>
+#include <unordered_map>
+using namespace std;
 
 class ArrayQuiz {
 public:
     ArrayQuiz() {}
+    //1. Two Sum
+    vector<int> twoSum(vector<int> &&nums, int target);
 
     ~ArrayQuiz() {}
 };
