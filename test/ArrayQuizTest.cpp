@@ -11,5 +11,5 @@ using namespace std;
 ArrayQuiz aq;
 
 TEST (ArrayTest, findDuplicate) {
-    cout<<"test"<<endl;
+    cout << "test" << endl;
 }
