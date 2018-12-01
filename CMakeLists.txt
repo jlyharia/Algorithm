@@ -38,30 +38,7 @@ message("-- CMAKE_SOURCE_DIR = " ${CMAKE_SOURCE_DIR})
 
 set(HEADER_FILES
 		${HEADER_FILES}
-		${CMAKE_SOURCE_DIR}/src/basic/ArithmeticExp.h
-		${CMAKE_SOURCE_DIR}/src/basic/Matrix.hpp
-		${CMAKE_SOURCE_DIR}/src/basic/Sorting.hpp
-		${CMAKE_SOURCE_DIR}/src/include/LeetCodeHeaders.hpp
-		${CMAKE_SOURCE_DIR}/src/include/SingleLinkedList.hpp
-		${CMAKE_SOURCE_DIR}/src/include/SortAlgorithm.hpp
-		${CMAKE_SOURCE_DIR}/src/include/Tree.hpp
-		${CMAKE_SOURCE_DIR}/src/include/UndirectedGraphNode.hpp
-		${CMAKE_SOURCE_DIR}/src/Interview/MostFrequentElements.hpp
-		${CMAKE_SOURCE_DIR}/src/leetcodeChallenge/ArrayQuiz.hpp
-		${CMAKE_SOURCE_DIR}/src/leetcodeChallenge/Backtracking.hpp
-		${CMAKE_SOURCE_DIR}/src/leetcodeChallenge/BitMagic.hpp
-		${CMAKE_SOURCE_DIR}/src/leetcodeChallenge/ChallengeBase.hpp
-		${CMAKE_SOURCE_DIR}/src/leetcodeChallenge/DynamicQuiz.hpp
-		${CMAKE_SOURCE_DIR}/src/leetcodeChallenge/Graph.hpp
-		${CMAKE_SOURCE_DIR}/src/leetcodeChallenge/LinkedList.hpp
-		${CMAKE_SOURCE_DIR}/src/leetcodeChallenge/MathQuiz.hpp
-		${CMAKE_SOURCE_DIR}/src/leetcodeChallenge/MatrixQuiz.hpp
-		${CMAKE_SOURCE_DIR}/src/leetcodeChallenge/MinStack.hpp
-		${CMAKE_SOURCE_DIR}/src/leetcodeChallenge/Numbers.hpp
-		${CMAKE_SOURCE_DIR}/src/leetcodeChallenge/StringQuiz.hpp
-		${CMAKE_SOURCE_DIR}/src/leetcodeChallenge/TreeQuiz.hpp
-		${CMAKE_SOURCE_DIR}/src/leetcodeChallenge/Trie.hpp
-		${CMAKE_SOURCE_DIR}/src/leetcodeChallenge/DepthFirstSearch.hpp)
+		${CMAKE_SOURCE_DIR}/src/leetcodeChallenge/ArrayQuiz.hpp)
 # include headers
 include_directories(${CMAKE_SOURCE_DIR}/src/Interview
 		${CMAKE_SOURCE_DIR}/src/include
