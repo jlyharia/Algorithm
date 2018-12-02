@@ -30,7 +30,7 @@ TEST (LinkedListQu, Add_Two_Numbers) {
     print(case3_l1);
     print(case3_l2);
     ListNode* answer = lq.addTwoNumbers(case3_l1, case3_l2);
-//    print(answer);
+    print(answer);
 }
 
 

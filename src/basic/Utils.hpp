@@ -18,14 +18,14 @@ struct ListNode {
 };
 
 template<class T>
-void print(std::vector<T> &vec) {
+inline void print(std::vector<T> &vec) {
     for (auto &&i:vec) {
         std::cout << i << '\t';
     }
     std::cout << '\n';
 }
 
-void print(ListNode *ln) {
+inline void print(ListNode *ln) {
     while (ln != nullptr) {
         std::cout << ln->val << '\t';
         ln = ln->next;
