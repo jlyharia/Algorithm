@@ -16,6 +16,8 @@ include_directories(${TEST_SOURCE_DIR}/src
 
 
 ADD_TEST_CASE(ArrayQuizTest)
+ADD_TEST_CASE(LinkedListQuizTest)
+ADD_TEST_CASE(BackTrackingTest)
 
 add_test(NAME testName
 		COMMAND -test)

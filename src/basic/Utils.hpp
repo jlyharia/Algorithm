@@ -8,13 +8,30 @@
 #include <vector>
 #include <iostream>
 
+struct ListNode {
+    int val;
+    ListNode *next;
+
+    ListNode(int x) : val(x), next(NULL) {}
+
+    ListNode(int x, ListNode *next) : val(x), next(next) {}
+};
+
 template<class T>
 void print(std::vector<T> &vec) {
     for (auto &&i:vec) {
         std::cout << i << '\t';
     }
     std::cout << '\n';
-
 }
+
+void print(ListNode *ln) {
+    while (ln != nullptr) {
+        std::cout << ln->val << '\t';
+        ln = ln->next;
+    }
+    std::cout << '\n';
+}
+
 
 #endif //ALGORITHM_UTILS_HPP
