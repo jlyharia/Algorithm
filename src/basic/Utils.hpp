@@ -18,20 +18,14 @@ struct ListNode {
 };
 
 template<class T>
-inline void print(std::vector<T> &vec) {
+void print(std::vector<T> &vec) {
     for (auto &&i:vec) {
         std::cout << i << '\t';
     }
     std::cout << '\n';
 }
 
-inline void print(ListNode *ln) {
-    while (ln != nullptr) {
-        std::cout << ln->val << '\t';
-        ln = ln->next;
-    }
-    std::cout << '\n';
-}
+void printListNode(ListNode *ln);
 
 
 #endif //ALGORITHM_UTILS_HPP

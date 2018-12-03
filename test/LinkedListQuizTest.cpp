@@ -27,10 +27,10 @@ LinkedListQuiz lq;
 TEST (LinkedListQu, Add_Two_Numbers) {
     ListNode* case3_l1 = new ListNode(2, new ListNode(9));
     ListNode* case3_l2 = new ListNode(5, new ListNode(6, new ListNode(9)));
-    print(case3_l1);
-    print(case3_l2);
+    printListNode(case3_l1);
+    printListNode(case3_l2);
     ListNode* answer = lq.addTwoNumbers(case3_l1, case3_l2);
-    print(answer);
+    printListNode(answer);
 }
 
 
