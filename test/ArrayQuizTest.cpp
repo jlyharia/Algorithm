@@ -24,17 +24,21 @@ TEST (ArrayTest, two_sum) {
 
 
 TEST (ArrayTest, Longest_Substring_Without_Repeating_Characters) {
-
-
     EXPECT_EQ(3, aq.lengthOfLongestSubstring("abcabcbb"));
 
-    cout << aq.lengthOfLongestSubstring("bbbbb") << "\n";
+    EXPECT_EQ(1, aq.lengthOfLongestSubstring("bbbbb"));
 
-    cout << aq.lengthOfLongestSubstring("au") << "\n";
+    EXPECT_EQ(2, aq.lengthOfLongestSubstring("au"));
 
-    cout << aq.lengthOfLongestSubstring("pwwkew") << "\n";
+    EXPECT_EQ(3, aq.lengthOfLongestSubstring("pwwkew"));
 
-    cout << aq.lengthOfLongestSubstring("cdd") << "\n";
+    EXPECT_EQ(2, aq.lengthOfLongestSubstring("cdd"));
 
-    cout << aq.lengthOfLongestSubstring("abba") << "\n";
+    EXPECT_EQ(2, aq.lengthOfLongestSubstring("abba"));
+}
+
+TEST (ArrayTest, Median_of_Two_Sorted_Arrays) {
+    std::cout << aq.findMedianSortedArrays({1, 3}, {2});
+
+    std::cout << aq.findMedianSortedArrays({1, 2}, {3, 4});
 }

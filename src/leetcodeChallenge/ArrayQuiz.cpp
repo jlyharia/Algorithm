@@ -38,3 +38,7 @@ int ArrayQuiz::lengthOfLongestSubstring(std::string s) {
     }
     return maxLen;
 }
+
+double ArrayQuiz::findMedianSortedArrays(vector<int>& nums1, vector<int>& nums2){
+
+}
