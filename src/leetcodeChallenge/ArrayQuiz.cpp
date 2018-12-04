@@ -6,6 +6,7 @@
  */
 
 #include "ArrayQuiz.hpp"
+#include <unordered_map>
 
 vector<int> ArrayQuiz::twoSum(vector<int> &&nums, int target) {
     vector<int> result;
@@ -20,4 +21,20 @@ vector<int> ArrayQuiz::twoSum(vector<int> &&nums, int target) {
         map[target - nums[i]] = i;
     }
     return result;
+}
+
+
+int ArrayQuiz::lengthOfLongestSubstring(std::string s) {
+    std::unordered_map<char, int> map;
+    int maxLen = 0;
+
+    for (int i = 0, j = 0; i < s.size(); i++) {
+        if (map.find(s[i]) != map.end()) {
+            j = std::max(map[s[i]] + 1, j);
+        }
+
+        maxLen = std::max(maxLen, i - j + 1);
+        map[s[i]] = i;
+    }
+    return maxLen;
 }

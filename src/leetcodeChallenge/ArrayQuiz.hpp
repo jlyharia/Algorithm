@@ -10,15 +10,18 @@
 
 #include <vector>
 #include <unordered_map>
+#include <string>
+
 using namespace std;
 
 class ArrayQuiz {
 public:
-    ArrayQuiz() {}
     //1. Two Sum
     vector<int> twoSum(vector<int> &&nums, int target);
 
-    ~ArrayQuiz() {}
+
+    //3. Longest Substring Without Repeating Characters
+    int lengthOfLongestSubstring(std::string s);
 };
 
 #endif /* ARRAYQUIZ_HPP_ */
