@@ -38,7 +38,7 @@ TEST (ArrayTest, Longest_Substring_Without_Repeating_Characters) {
 }
 
 TEST (ArrayTest, Median_of_Two_Sorted_Arrays) {
-    std::cout << aq.findMedianSortedArrays({1, 3}, {2});
+    std::cout << aq.findMedianSortedArrays({1, 3}, {2}) << '\n';
 
-    std::cout << aq.findMedianSortedArrays({1, 2}, {3, 4});
+    std::cout << aq.findMedianSortedArrays({1, 2}, {3, 4}) << '\n';
 }

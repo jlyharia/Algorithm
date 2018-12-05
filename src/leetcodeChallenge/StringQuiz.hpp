@@ -1,0 +1,17 @@
+//
+// Created by Yihung Lee on 2018-12-05.
+//
+
+#ifndef ALGORITHM_STRINGQUIZ_HPP
+#define ALGORITHM_STRINGQUIZ_HPP
+
+#include <string>
+using namespace std;
+class StringQuiz {
+public:
+    // 5. Longest Palindromic Substring
+    string longestPalindrome(string s);
+};
+
+
+#endif //ALGORITHM_STRINGQUIZ_HPP

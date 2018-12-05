@@ -42,7 +42,8 @@ set(HEADER_FILES
 		${CMAKE_SOURCE_DIR}/src/basic/Utils.hpp
 		${CMAKE_SOURCE_DIR}/src/leetcodeChallenge/LinkedListQuiz.hpp
 		${CMAKE_SOURCE_DIR}/src/leetcodeChallenge/BackTracking.hpp
-		${CMAKE_SOURCE_DIR}/src/leetcodeChallenge/DynamicProgramQuiz.hpp)
+		${CMAKE_SOURCE_DIR}/src/leetcodeChallenge/DynamicProgramQuiz.hpp
+		${CMAKE_SOURCE_DIR}/src/leetcodeChallenge/StringQuiz.hpp)
 # include headers
 include_directories(${CMAKE_SOURCE_DIR}/src/Interview
 		${CMAKE_SOURCE_DIR}/src/include
