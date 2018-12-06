@@ -6,11 +6,16 @@
 #define ALGORITHM_STRINGQUIZ_HPP
 
 #include <string>
+
 using namespace std;
+
 class StringQuiz {
 public:
     // 5. Longest Palindromic Substring
     string longestPalindrome(string s);
+
+private:
+    int expandAroundCenter(string s, int begin, int end);
 };
 
 
