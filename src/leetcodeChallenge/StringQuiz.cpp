@@ -36,3 +36,20 @@ int StringQuiz::expandAroundCenter(string s, int begin, int end) {
     }
     return end - begin - 1;
 }
+
+string StringQuiz::convert(string s, int numRows) {
+    if (numRows == 1) return s;
+    int cycleLen = 2 * (numRows - 1);
+    int n = s.size();
+    string ret;
+    for (int i = 0; i < numRows; i++) {
+        for (int j = 0; j + i < s.size(); j += cycleLen) {
+            ret += s[i + j];
+            if (i != 0 && i != numRows - 1 && j + cycleLen - i < n) {
+                // not first row, not last row and next character is within length
+                ret += s[j + cycleLen - i];
+            }
+        }
+    }
+    return ret;
+}
