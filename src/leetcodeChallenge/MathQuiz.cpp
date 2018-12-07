@@ -16,3 +16,7 @@ int MathQuiz::reverse(int x) {
     }
     return rev;
 }
+
+int MathQuiz::myAtoi(string str) {
+
+}

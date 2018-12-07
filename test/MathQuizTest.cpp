@@ -12,3 +12,8 @@ MathQuiz mt;
 TEST (MathQuiz, Reverse_Integer) {
     EXPECT_EQ(-321, mt.reverse(-123));
 }
+
+
+TEST(MathQuiz, String_to_Integer_atoi) {
+
+}
