@@ -16,10 +16,9 @@ TEST (StringQuiz, Longest_Palindromic_Substring) {
 
 
 TEST (StringQuiz, ZigZag_Conversion) {
-    cout << sq.convert("PAYPALISHIRING", 3);
+    EXPECT_EQ("PAHNAPLSIIGYIR", sq.convert("PAYPALISHIRING", 3));
     //PAHNAPLSIIGYIR
-//    cout << sq.convert("PAYPALISHIRING", 4);
+    EXPECT_EQ("PINALSIGYAHRPI", sq.convert("PAYPALISHIRING", 4));
     //PINALSIGYAHRPI
-
-//    cout << sq.convert("0123456789abcdef", 6);
+    EXPECT_EQ("0a19b28c37d46e5f", sq.convert("0123456789abcdef", 6));
 }
