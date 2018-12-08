@@ -15,5 +15,5 @@ TEST (MathQuiz, Reverse_Integer) {
 
 
 TEST(MathQuiz, String_to_Integer_atoi) {
-
+    cout << mt.myAtoi("   -42") << '\n';
 }
