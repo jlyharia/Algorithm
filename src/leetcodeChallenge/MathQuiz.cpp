@@ -36,4 +36,16 @@ int MathQuiz::myAtoi(string str) {
 }
 
 
-bool isPalindrome(int x)
+bool MathQuiz::isPalindrome(int x) {
+    if (x < 0) return false;
+    int y = 1;
+    while (x / y >= 10)
+        y *= 10;
+
+    while (x) {
+        if (x / y != x % 10) return false;
+        x = (x % y) / 10;
+        y /= 100;
+    }
+    return true;
+}
