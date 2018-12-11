@@ -10,6 +10,8 @@
 
 class DynamicProgramQuiz {
 public:
+    // 70. Climbing Stairs
+    int climbStairs(int n);
 };
 
 

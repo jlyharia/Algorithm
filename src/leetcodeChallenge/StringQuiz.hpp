@@ -6,7 +6,7 @@
 #define ALGORITHM_STRINGQUIZ_HPP
 
 #include <string>
-
+#include <vector>
 using namespace std;
 
 class StringQuiz {
@@ -16,6 +16,9 @@ public:
 
     // 6. ZigZag Conversion
     string convert(string s, int numRows);
+
+    // 10. Regular Expression Matching
+    bool isMatch(string s, string p);
 private:
     int expandAroundCenter(string s, int begin, int end);
 };
