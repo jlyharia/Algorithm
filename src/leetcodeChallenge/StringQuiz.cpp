@@ -78,9 +78,8 @@ bool StringQuiz::isMatch(string s, string p) {
                     bool ss = dp[i][j - 1];
                     bool sss = dp[i][j - 2];
                     dp[i][j] = true;
-                }
-                else if (i > 0 && (p[j - 2] == s[i - 1] || p[j - 2] == '.') &&
-                         dp[i - 1][j]) // match multiple preceding elements
+                } else if (i > 0 && (p[j - 2] == s[i - 1] || p[j - 2] == '.') &&
+                           dp[i - 1][j]) // match multiple preceding elements
                     dp[i][j] = true;
             }
             cout << "i = " << i << " j = " << j << '\n';
@@ -89,6 +88,7 @@ bool StringQuiz::isMatch(string s, string p) {
     }
     return dp[m][n];
 }
+
 /*
 bool StringQuiz::isMatch(string s, string p) {
     int m = s.size(), n = p.size();
@@ -110,3 +110,7 @@ bool StringQuiz::isMatch(string s, string p) {
     return dp[m][n];
 }
 */
+
+int StringQuiz::romanToInt(string s) {
+    
+}

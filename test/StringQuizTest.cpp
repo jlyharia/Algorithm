@@ -26,3 +26,19 @@ TEST (StringQuiz, Regular_Expression_Matching) {
 
     cout << sq.isMatch("aab", "c*a*b");
 }
+
+TEST (StringQuiz, Roman_to_Integer) {
+    EXPECT_EQ(3, sq.romanToInt("III"));
+
+    EXPECT_EQ(4, sq.romanToInt("IV"));
+
+    EXPECT_EQ(9, sq.romanToInt("IX"));
+    EXPECT_EQ(58, sq.romanToInt("LVIII"));
+
+    EXPECT_EQ(1994, sq.romanToInt("MCMXCIV"));
+
+
+    IV
+
+
+}
