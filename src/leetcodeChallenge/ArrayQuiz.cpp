@@ -76,6 +76,10 @@ double ArrayQuiz::findMedianSortedArrays(vector<int> &&nums1, vector<int> &&nums
     return 0.0;
 }
 
+/**
+ * Prove
+ * https://leetcode.com/problems/container-with-most-water/discuss/6099/yet-another-way-to-see-what-happens-in-the-on-algorithm
+ */
 int ArrayQuiz::maxArea(vector<int> &&height) {
     int max_area = 0;
     int L = 0, R = height.size() - 1;
