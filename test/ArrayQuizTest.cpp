@@ -45,7 +45,7 @@ TEST (ArrayTest, Median_of_Two_Sorted_Arrays) {
 
 TEST (ArrayTest, Container_With_Most_Water) {
 
-    cout << aq.maxArea({1, 8, 6, 2, 5, 4, 8, 3, 7}) << '\n';
+    EXPECT_EQ(49, aq.maxArea({1, 8, 6, 2, 5, 4, 8, 3, 7}));
 
-    cout << aq.maxArea({1, 8, 8, 8, 8, 8, 2, 2, 2}) << '\n';
+    EXPECT_EQ(32, aq.maxArea({1, 8, 8, 8, 8, 8, 2, 2, 2}));
 }

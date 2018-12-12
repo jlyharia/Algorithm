@@ -57,6 +57,7 @@ string StringQuiz::convert(string s, int numRows) {
 /**
  * Explain better
  * http://bangbingsyb.blogspot.com/2014/11/leetcode-regular-expression-matching.html
+ * https://www.youtube.com/watch?v=DqhPJ8MzDKM
  */
 bool StringQuiz::isMatch(string s, string p) {
     int m = s.size(), n = p.size();
