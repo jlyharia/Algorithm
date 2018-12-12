@@ -75,3 +75,13 @@ double ArrayQuiz::findMedianSortedArrays(vector<int> &&nums1, vector<int> &&nums
     }
     return 0.0;
 }
+
+int ArrayQuiz::maxArea(vector<int> &&height) {
+    int max_area = 0;
+    int L = 0, R = height.size() - 1;
+    while (R > L) {
+        max_area = std::max(max_area, std::min(height[L], height[R]) * (R - L));
+        height[L] < height[R] ? L++ : R--;
+    }
+    return max_area;
+}

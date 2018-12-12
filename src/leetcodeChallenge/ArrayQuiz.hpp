@@ -24,7 +24,10 @@ public:
     int lengthOfLongestSubstring(std::string s);
 
     // 4. Median of Two Sorted Arrays
-    double findMedianSortedArrays(vector<int>&& nums1, vector<int>&& nums2);
+    double findMedianSortedArrays(vector<int> &&nums1, vector<int> &&nums2);
+
+    // 11. Container With Most Water
+    int maxArea(vector<int> &&height);
 };
 
 #endif /* ARRAYQUIZ_HPP_ */

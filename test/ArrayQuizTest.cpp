@@ -42,3 +42,10 @@ TEST (ArrayTest, Median_of_Two_Sorted_Arrays) {
 
     std::cout << aq.findMedianSortedArrays({1, 2}, {3, 4}) << '\n';
 }
+
+TEST (ArrayTest, Container_With_Most_Water) {
+
+    cout << aq.maxArea({1, 8, 6, 2, 5, 4, 8, 3, 7}) << '\n';
+
+    cout << aq.maxArea({1, 8, 8, 8, 8, 8, 2, 2, 2}) << '\n';
+}
