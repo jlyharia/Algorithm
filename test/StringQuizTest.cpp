@@ -23,8 +23,7 @@ TEST (StringQuiz, ZigZag_Conversion) {
 }
 
 TEST (StringQuiz, Regular_Expression_Matching) {
-
-    cout << sq.isMatch("aab", "c*a*b");
+    EXPECT_EQ(true, sq.isMatch("aab", "a*b*"));
 }
 
 TEST (StringQuiz, Roman_to_Integer) {
@@ -36,9 +35,5 @@ TEST (StringQuiz, Roman_to_Integer) {
     EXPECT_EQ(58, sq.romanToInt("LVIII"));
 
     EXPECT_EQ(1994, sq.romanToInt("MCMXCIV"));
-
-
-    IV
-
 
 }
