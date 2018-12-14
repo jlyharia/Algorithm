@@ -32,8 +32,22 @@ TEST (StringQuiz, Roman_to_Integer) {
     EXPECT_EQ(4, sq.romanToInt("IV"));
 
     EXPECT_EQ(9, sq.romanToInt("IX"));
+
     EXPECT_EQ(58, sq.romanToInt("LVIII"));
 
     EXPECT_EQ(1994, sq.romanToInt("MCMXCIV"));
+}
+
+
+TEST (StringQuiz, Integer_to_Roman) {
+    EXPECT_EQ("III", sq.intToRoman(3));
+
+    EXPECT_EQ("IV", sq.intToRoman(4));
+
+    EXPECT_EQ("IX", sq.intToRoman(9));
+    
+    EXPECT_EQ("LVIII", sq.intToRoman(58));
+
+    EXPECT_EQ("MCMXCIV", sq.intToRoman(1994));
 
 }

@@ -7,7 +7,7 @@
 
 #include <string>
 #include <vector>
-
+#include <unordered_map>
 using namespace std;
 
 class StringQuiz {
@@ -21,8 +21,12 @@ public:
     // 10. Regular Expression Matching
     bool isMatch(string s, string p);
 
+    // 12. Integer to Roman
+    string intToRoman(int num);
+
     // 13. Roman to Integer
     int romanToInt(string s);
+
 
 private:
     int expandAroundCenter(string s, int begin, int end);
