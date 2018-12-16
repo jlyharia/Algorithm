@@ -49,5 +49,10 @@ TEST (StringQuiz, Integer_to_Roman) {
     EXPECT_EQ("LVIII", sq.intToRoman(58));
 
     EXPECT_EQ("MCMXCIV", sq.intToRoman(1994));
+}
 
+TEST (StringQuiz, Longest_Common_Prefix) {
+    EXPECT_EQ("fl", sq.longestCommonPrefix({"flower", "flow", "flight"}));
+
+    EXPECT_EQ("", sq.longestCommonPrefix({"dog", "racecar", "car"}));
 }

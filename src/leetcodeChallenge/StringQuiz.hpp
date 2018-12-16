@@ -8,6 +8,7 @@
 #include <string>
 #include <vector>
 #include <unordered_map>
+
 using namespace std;
 
 class StringQuiz {
@@ -27,9 +28,12 @@ public:
     // 13. Roman to Integer
     int romanToInt(string s);
 
+    // 14. Longest Common Prefix
+    string longestCommonPrefix(vector<string> &&strs);
 
 private:
     int expandAroundCenter(string s, int begin, int end);
+
 };
 
 
