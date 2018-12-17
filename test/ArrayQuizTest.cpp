@@ -52,4 +52,10 @@ TEST (ArrayTest, Container_With_Most_Water) {
 
 TEST (ArrayTest, _3_Sum) {
     print(aq.threeSum({-1, 0, 1, 2, -1, -4}));
+
+    print(aq.threeSum({-2, 0, 1, 1, 2}));
+
+    print(aq.threeSum({0, 0, 0, 0}));
+
+    print(aq.threeSum({-4, -2, -2, -2, 0, 1, 2, 2, 2, 3, 3, 4, 4, 6, 6}));
 }
