@@ -31,6 +31,9 @@ public:
 
     // 15. 3Sum
     vector<vector<int>> threeSum(vector<int>&& nums);
+
+    // 16. 3Sum Closest
+    int threeSumClosest(vector<int>&& nums, int target);
 };
 
 #endif /* ARRAYQUIZ_HPP_ */

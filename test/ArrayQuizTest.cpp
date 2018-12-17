@@ -59,3 +59,7 @@ TEST (ArrayTest, _3_Sum) {
 
     print(aq.threeSum({-4, -2, -2, -2, 0, 1, 2, 2, 2, 3, 3, 4, 4, 6, 6}));
 }
+
+TEST (ArrayTest, _3_Sum_Closest) {
+    EXPECT_EQ(2, aq.threeSumClosest({-1, 2, 1, -4}, 1));
+}
