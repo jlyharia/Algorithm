@@ -49,3 +49,7 @@ TEST (ArrayTest, Container_With_Most_Water) {
 
     EXPECT_EQ(32, aq.maxArea({1, 8, 8, 8, 8, 8, 2, 2, 2}));
 }
+
+TEST (ArrayTest, _3_Sum) {
+    print(aq.threeSum({-1, 0, 1, 2, -1, -4}));
+}

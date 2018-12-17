@@ -28,6 +28,9 @@ public:
 
     // 11. Container With Most Water
     int maxArea(vector<int> &&height);
+
+    // 15. 3Sum
+    vector<vector<int>> threeSum(vector<int>&& nums);
 };
 
 #endif /* ARRAYQUIZ_HPP_ */

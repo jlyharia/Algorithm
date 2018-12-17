@@ -89,3 +89,14 @@ int ArrayQuiz::maxArea(vector<int> &&height) {
     }
     return max_area;
 }
+
+
+vector<vector<int>> ArrayQuiz::threeSum(vector<int> &&nums) {
+    vector<vector<int>> ans;
+    int a = 0, b = 1, c = nums.size() - 1;
+    while (a < c) {
+        if (nums[a] + nums[b] + nums[c] == 0) {
+            ans.push_back({nums[a], nums[b], nums[c]});
+        }
+    }
+}
