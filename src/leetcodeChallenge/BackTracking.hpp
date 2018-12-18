@@ -6,9 +6,15 @@
 #define ALGORITHM_BACKTRACKING_HPP
 
 #include <Utils.hpp>
+#include <string>
+
+using namespace std;
 
 class BackTracking {
 public:
+
+    // 17. Letter Combinations of a Phone Number
+    vector<string> letterCombinations(string digits);
 };
 
 

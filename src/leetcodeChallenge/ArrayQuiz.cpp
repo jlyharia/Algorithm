@@ -119,37 +119,30 @@ vector<vector<int>> ArrayQuiz::threeSum(vector<int> &&nums) {
     return ans;
 }
 
-
+/**
+ * Return the sum of the three integers.
+ */
 int ArrayQuiz::threeSumClosest(vector<int> &&nums, int target) {
+    if (nums.size() < 3) return INT_MAX;
     std::sort(nums.begin(), nums.end());
-    vector<vector<int>> ans;
     // for empty or small input
     // fix left
     int min = INT_MAX;
     for (int i = 0; i < nums.size() - 2; i++) {
-        if (i > 0 && nums[i] == nums[i - 1])
-            continue;
         int j = i + 1;
         int k = nums.size() - 1;
         while (j < k) {
-            int offset = target - (nums[i] + nums[j] + nums[k]);
-            if(offset > min){
+            const int diff = nums[i] + nums[j] + nums[k] - target;
+            if (abs(diff) < abs(min)) min = diff;
+            if (diff == 0) {
+                break;
+            } else if (diff < 0) {
                 j++;
-                continue;
-            }
-            if (sum < 0) {
-                j++;
-            } else if (sum > 0) {
-                k--;
             } else {
-                ans.push_back({nums[i], nums[j], nums[k]});
-                j++;
                 k--;
-                // remove duplicate
-                while (nums[j] == nums[j - 1] && j < k) j++;
-                while (nums[k] == nums[k + 1] && j < k) k--;
             }
+
         }
     }
-    return ans;
+    return target + min;
 }

@@ -18,7 +18,7 @@ struct ListNode {
 };
 
 template<class T>
-void print(std::vector<T> &vec) {
+void print(std::vector<T> &&vec) {
     for (auto &&i:vec) {
         std::cout << i << '\t';
     }

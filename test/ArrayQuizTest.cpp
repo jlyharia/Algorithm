@@ -18,8 +18,7 @@ TEST (ArrayTest, two_sum) {
 //    vector<int> ans2 = aq.twoSum({3, 2, 4}, 6);
 //    print(ans2);
 
-    vector<int> ans3 = aq.twoSum({3, 3}, 6);
-    print(ans3);
+    print(aq.twoSum({3, 3}, 6));
 }
 
 
