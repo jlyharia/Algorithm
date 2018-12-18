@@ -6,7 +6,6 @@
  */
 
 #include "ArrayQuiz.hpp"
-#include <unordered_map>
 
 vector<int> ArrayQuiz::twoSum(vector<int> &&nums, int target) {
     vector<int> result;
@@ -121,6 +120,36 @@ vector<vector<int>> ArrayQuiz::threeSum(vector<int> &&nums) {
 }
 
 
-int ArrayQuiz::threeSumClosest(vector<int>& nums, int target) {
-
+int ArrayQuiz::threeSumClosest(vector<int> &&nums, int target) {
+    std::sort(nums.begin(), nums.end());
+    vector<vector<int>> ans;
+    // for empty or small input
+    // fix left
+    int min = INT_MAX;
+    for (int i = 0; i < nums.size() - 2; i++) {
+        if (i > 0 && nums[i] == nums[i - 1])
+            continue;
+        int j = i + 1;
+        int k = nums.size() - 1;
+        while (j < k) {
+            int offset = target - (nums[i] + nums[j] + nums[k]);
+            if(offset > min){
+                j++;
+                continue;
+            }
+            if (sum < 0) {
+                j++;
+            } else if (sum > 0) {
+                k--;
+            } else {
+                ans.push_back({nums[i], nums[j], nums[k]});
+                j++;
+                k--;
+                // remove duplicate
+                while (nums[j] == nums[j - 1] && j < k) j++;
+                while (nums[k] == nums[k + 1] && j < k) k--;
+            }
+        }
+    }
+    return ans;
 }
