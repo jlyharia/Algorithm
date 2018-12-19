@@ -149,6 +149,9 @@ int ArrayQuiz::threeSumClosest(vector<int> &&nums, int target) {
 
 /**
  * http://www.cnblogs.com/grandyang/p/4515925.html
+ *
+ * k-sum
+ * http://bangbingsyb.blogspot.com/2014/11/leetcode-4sum.html
  */
 vector<vector<int>> ArrayQuiz::fourSum(vector<int> &&nums, int target) {
 
