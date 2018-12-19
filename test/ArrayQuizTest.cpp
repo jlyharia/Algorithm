@@ -64,5 +64,20 @@ TEST (ArrayTest, _3_Sum_Closest) {
 }
 
 TEST (ArrayTest, _4_Sum) {
-    print(aq.fourSum({1, 0, -1, 0, -2, 2}, 0));
+    {
+        vector<vector<int>> ans{
+                {-2, -1, 1, 2},
+                {-2, 0,  0, 2},
+                {-1, 0,  0, 1}
+        };
+        EXPECT_EQ(ans, (aq.fourSum({1, 0, -1, 0, -2, 2}, 0)));
+    }
+
+    {
+        vector<vector<int>> ans{
+                {0, 0, 0, 0},
+        };
+        EXPECT_EQ(ans, (aq.fourSum({0, 0, 0, 0}, 0)));
+    }
+
 }

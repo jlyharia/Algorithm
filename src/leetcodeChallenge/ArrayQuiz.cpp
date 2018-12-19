@@ -154,5 +154,56 @@ int ArrayQuiz::threeSumClosest(vector<int> &&nums, int target) {
  * http://bangbingsyb.blogspot.com/2014/11/leetcode-4sum.html
  */
 vector<vector<int>> ArrayQuiz::fourSum(vector<int> &&nums, int target) {
-
+    vector<vector<int>> ans;
+    if (nums.size() < 4) return ans;
+    sort(nums.begin(), nums.end());
+    for (int i = 0; i < nums.size() - 3; i++) {
+        if (i > 0 && nums[i] == nums[i - 1]) continue;
+        for (int j = i + 1; j < nums.size() - 2; j++) {
+            if (j > i + 1 && nums[j] == nums[j - 1]) continue;
+            int third = j + 1, fourth = nums.size() - 1;
+            while (third < fourth) {
+                int sum = nums[i] + nums[j] + nums[third] + nums[fourth];
+                if (sum == target) {
+                    ans.push_back({nums[i], nums[j], nums[third], nums[fourth]});
+                    third++;
+                    fourth--;
+                    while (third < fourth && nums[third] == nums[third - 1]) third++;
+                    while (third < fourth && nums[fourth] == nums[fourth + 1]) fourth--;
+                } else if (sum < target) {
+                    third++;
+                } else {
+                    fourth--;
+                }
+            }
+        }
+    }
+    return ans;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
