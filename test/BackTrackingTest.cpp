@@ -10,5 +10,8 @@ using namespace std;
 BackTracking bt;
 
 TEST (BackTracking, Letter_Combinations_of_a_Phone_Number) {
-    print(bt.letterCombinations("23"));
+    {
+        vector<string> ss{"ad", "ae", "af", "bd", "be", "bf", "cd", "ce", "cf"};
+        EXPECT_EQ(ss, bt.letterCombinations("23"));
+    }
 }
