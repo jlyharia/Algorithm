@@ -146,3 +146,10 @@ int ArrayQuiz::threeSumClosest(vector<int> &&nums, int target) {
     }
     return target + min;
 }
+
+/**
+ * http://www.cnblogs.com/grandyang/p/4515925.html
+ */
+vector<vector<int>> ArrayQuiz::fourSum(vector<int> &&nums, int target) {
+
+}

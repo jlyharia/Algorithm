@@ -34,6 +34,9 @@ public:
 
     // 16. 3Sum Closest
     int threeSumClosest(vector<int>&& nums, int target);
+
+    // 18. 4Sum
+    vector<vector<int>> fourSum(vector<int>&& nums, int target);
 };
 
 #endif /* ARRAYQUIZ_HPP_ */

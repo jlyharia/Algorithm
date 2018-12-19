@@ -62,3 +62,7 @@ TEST (ArrayTest, _3_Sum) {
 TEST (ArrayTest, _3_Sum_Closest) {
     EXPECT_EQ(2, aq.threeSumClosest({-1, 2, 1, -4}, 1));
 }
+
+TEST (ArrayTest, _4_Sum) {
+    print(aq.fourSum({1, 0, -1, 0, -2, 2}, 0));
+}
