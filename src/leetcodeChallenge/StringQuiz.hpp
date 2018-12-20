@@ -31,6 +31,9 @@ public:
     // 14. Longest Common Prefix
     string longestCommonPrefix(vector<string> &&strs);
 
+    // 20. Valid Parentheses
+    bool isValid(string s);
+
 private:
     int expandAroundCenter(string s, int begin, int end);
 

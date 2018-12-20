@@ -5,6 +5,7 @@
 #include "StringQuiz.hpp"
 #include "Utils.hpp"
 #include <array>
+#include <stack>
 
 string StringQuiz::longestPalindrome(string s) {
 
@@ -108,8 +109,8 @@ int StringQuiz::romanToInt(string s) {
 }
 
 string StringQuiz::intToRoman(int num) {
-    const array<string, 13> rom{"M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I"};
-    const array<int, 13> digit{1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1};
+    const array<string, 13> rom{{"M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I"}};
+    const array<int, 13> digit{{1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1}};
     string ans;
     for (int i = 0; i < digit.size() && num > 0; i++) {
         int count = num / digit[i];
@@ -134,4 +135,35 @@ string StringQuiz::longestCommonPrefix(vector<string> &&strs) {
         }
     }
     return strs[0];
+}
+
+
+/**
+ * Given a string containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid.
+
+An input string is valid if:
+
+Open brackets must be closed by the same type of brackets.
+Open brackets must be closed in the correct order.
+Note that an empty string is also considered valid.
+ */
+bool StringQuiz::isValid(string s) {
+    std::stack<char> arr;
+    for (char c:s) {
+        if (c == '(' || c == '{' || c == '[') {
+            arr.push(c);
+        } else if (arr.empty()) {
+            arr.push(c);
+            break;
+        } else {
+            if ((arr.top() == '(' && c == ')') ||
+                (arr.top() == '{' && c == '}') ||
+                (arr.top() == '[' && c == ']')) {
+                arr.pop();
+            } else {
+                break;
+            }
+        }
+    }
+    return arr.empty();
 }

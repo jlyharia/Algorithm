@@ -56,3 +56,14 @@ TEST (StringQuiz, Longest_Common_Prefix) {
 
     EXPECT_EQ("", sq.longestCommonPrefix({"dog", "racecar", "car"}));
 }
+
+TEST (StringQuiz, Valid_Parentheses) {
+    EXPECT_EQ(true, sq.isValid("()"));
+    EXPECT_EQ(true, sq.isValid("()[]{}"));
+    EXPECT_EQ(false, sq.isValid("(]"));
+    EXPECT_EQ(false, sq.isValid("([)]"));
+    EXPECT_EQ(true, sq.isValid("{[]}"));
+    EXPECT_EQ(false, sq.isValid("]"));
+    EXPECT_EQ(false, sq.isValid("(])"));
+
+}
