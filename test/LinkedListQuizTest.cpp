@@ -73,7 +73,13 @@ TEST (LinkedListQuiz, Remove_Nth_Node_From_End_of_List) {
         EXPECT_EQ(NULL, ans);
     }
 }
+
 TEST (LinkedListQuiz, Merge_Two_Sorted_Lists) {
 //    Input: 1->2->4, 1->3->4
 //    Output: 1->1->2->3->4->4
+
+    ListNode *l1 = new ListNode(1, new ListNode(2, new ListNode(4)));
+    ListNode *l2 = new ListNode(1, new ListNode(3, new ListNode(4, new ListNode(6))));
+    ListNode *ans = lq.mergeTwoLists(l1, l2);
+    printListNode(ans);
 }
