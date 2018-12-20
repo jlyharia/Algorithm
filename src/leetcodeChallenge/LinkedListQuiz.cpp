@@ -29,3 +29,32 @@ ListNode *LinkedListQuiz::addTwoNumbers(ListNode *l1, ListNode *l2) {
     }
     return dummy->next;
 }
+
+
+ListNode *LinkedListQuiz::removeNthFromEnd(ListNode *head, int n) {
+    ListNode *slow = new ListNode(0);
+    slow->next = head;
+    ListNode *fast = head;
+    for (int i = 0; i < n; i++) {
+        fast = fast->next;
+    }
+    int cn = 0;
+    while (fast) {
+        cn++;
+        fast = fast->next;
+        slow = slow->next;
+    }
+    if (cn == 0) {
+        // remove head
+        ListNode *del = slow->next;
+        head = head->next;
+        delete del;
+    } else {
+        // regular
+        ListNode *del = slow->next;
+        slow->next = slow->next->next;
+        delete del;
+    }
+
+    return head;
+}

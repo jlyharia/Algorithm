@@ -24,13 +24,53 @@ LinkedListQuiz lq;
     Output: 7 -> 5 -> 0 -> 1
     92 + 965 = 1057
  */
-TEST (LinkedListQu, Add_Two_Numbers) {
-    ListNode* case3_l1 = new ListNode(2, new ListNode(9));
-    ListNode* case3_l2 = new ListNode(5, new ListNode(6, new ListNode(9)));
+TEST (LinkedListQuiz, Add_Two_Numbers) {
+    ListNode *case3_l1 = new ListNode(2, new ListNode(9));
+    ListNode *case3_l2 = new ListNode(5, new ListNode(6, new ListNode(9)));
     printListNode(case3_l1);
     printListNode(case3_l2);
-    ListNode* answer = lq.addTwoNumbers(case3_l1, case3_l2);
+    ListNode *answer = lq.addTwoNumbers(case3_l1, case3_l2);
     printListNode(answer);
 }
 
 
+TEST (LinkedListQuiz, Remove_Nth_Node_From_End_of_List) {
+//    {
+//        // 1->2->3->4->5, and n = 1.
+//        ListNode *head = new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(4, new ListNode(5)))));
+//        printListNode(head);
+//        ListNode *ans = lq.removeNthFromEnd(head, 1);
+//        printListNode(ans);
+//    }
+//    {
+//        // 1->2->3->4->5, and n = 2.
+//        ListNode *head = new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(4, new ListNode(5)))));
+//        printListNode(head);
+//        ListNode *ans = lq.removeNthFromEnd(head, 2);
+//        printListNode(ans);
+//    }
+//    {
+//        ListNode *head = new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(4, new ListNode(5)))));
+//        printListNode(head);
+//        ListNode *ans = lq.removeNthFromEnd(head, 3);
+//        printListNode(ans);
+//    }
+//    {
+//        ListNode *head = new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(4, new ListNode(5)))));
+//        printListNode(head);
+//        ListNode *ans = lq.removeNthFromEnd(head, 4);
+//        printListNode(ans);
+//    }
+//    {
+//        ListNode *head = new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(4, new ListNode(5)))));
+//        printListNode(head);
+//        ListNode *ans = lq.removeNthFromEnd(head, 5);
+//        printListNode(ans);
+//    }
+    {
+        ListNode *head = new ListNode(1);
+        printListNode(head);
+        ListNode *ans = lq.removeNthFromEnd(head, 1);
+        printListNode(ans);
+    }
+}

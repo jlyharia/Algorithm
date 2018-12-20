@@ -7,7 +7,7 @@
 
 void printListNode(ListNode *ln) {
     while (ln != nullptr) {
-        std::cout << ln->val << '\t';
+        std::cout << ln->val << " -> ";
         ln = ln->next;
     }
     std::cout << '\n';
