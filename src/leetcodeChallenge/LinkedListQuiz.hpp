@@ -14,9 +14,11 @@ public:
 
     ListNode *reverseList(ListNode *node);
 
-
     // 19. Remove Nth Node From End of List
     ListNode* removeNthFromEnd(ListNode* head, int n);
+
+    // 21. Merge Two Sorted Lists
+    ListNode* mergeTwoLists(ListNode* l1, ListNode* l2);
 };
 
 

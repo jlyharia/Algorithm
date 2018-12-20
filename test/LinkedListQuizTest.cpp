@@ -73,3 +73,7 @@ TEST (LinkedListQuiz, Remove_Nth_Node_From_End_of_List) {
         EXPECT_EQ(NULL, ans);
     }
 }
+TEST (LinkedListQuiz, Merge_Two_Sorted_Lists) {
+//    Input: 1->2->4, 1->3->4
+//    Output: 1->1->2->3->4->4
+}
