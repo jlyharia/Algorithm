@@ -15,3 +15,10 @@ TEST (BackTracking, Letter_Combinations_of_a_Phone_Number) {
         EXPECT_EQ(ss, bt.letterCombinations("23"));
     }
 }
+
+TEST (BackTracking, Generate_Parentheses) {
+    {
+        vector<string> ss{"ad", "ae", "af", "bd", "be", "bf", "cd", "ce", "cf"};
+        EXPECT_EQ(ss, bt.letterCombinations("23"));
+    }
+}

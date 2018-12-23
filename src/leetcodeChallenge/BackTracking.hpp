@@ -17,6 +17,9 @@ public:
     // 17. Letter Combinations of a Phone Number
     vector<string> letterCombinations(string digits);
 
+    // 22. Generate Parentheses
+    vector<string> generateParenthesis(int n);
+
 private:
     void
     letterCombinationsHelper(vector<string> &ans, const string digits, string res, int idx, const unordered_map<char, string>& map);
