@@ -36,6 +36,20 @@ void BackTracking::letterCombinationsHelper(vector<string> &ans, const string di
 }
 
 
+/**
+ * Given n pairs of parentheses, write a function to generate all combinations of well-formed parentheses.
+ */
 vector<string> BackTracking::generateParenthesis(int n) {
+    vector<string> ans;
+    generateParenthesisHelper(n, n, "", ans);
+    return ans;
+}
 
+void BackTracking::generateParenthesisHelper(int L, int R, string res, vector<string> &ans) {
+    if (L == 0 && R == 0) {
+        ans.push_back(res);
+    } else if (L >=0 && L <= R) {
+        generateParenthesisHelper(L - 1, R, res + '(', ans);
+        generateParenthesisHelper(L, R - 1, res + ')', ans);
+    }
 }

@@ -12,3 +12,9 @@ void printListNode(ListNode *ln) {
     }
     std::cout << '\n';
 }
+
+void printLevel(int lv) {
+    for (int i = 0; i < lv; i++) {
+        std::cout << '\t';
+    }
+}

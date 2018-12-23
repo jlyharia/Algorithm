@@ -23,6 +23,8 @@ public:
 private:
     void
     letterCombinationsHelper(vector<string> &ans, const string digits, string res, int idx, const unordered_map<char, string>& map);
+
+    void generateParenthesisHelper(int L, int R, string res, vector<string> &ans);
 };
 
 

@@ -38,4 +38,5 @@ void print(std::vector<std::vector<T>> &&vec) {
 void printListNode(ListNode *ln);
 
 
+void printLevel(int lv);
 #endif //ALGORITHM_UTILS_HPP
