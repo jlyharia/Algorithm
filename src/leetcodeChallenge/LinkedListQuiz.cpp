@@ -105,7 +105,7 @@ ListNode *LinkedListQuiz::mergeKLists(std::vector<ListNode *> &&lists) {
     std::priority_queue<ListNode *, std::vector<ListNode *>, decltype(comp)> priorityQueue(comp);
 
     for (const auto &i: lists) {
-        if(i) { // null list
+        if (i) { // null list
             priorityQueue.push(i);
         }
     }
@@ -124,4 +124,9 @@ ListNode *LinkedListQuiz::mergeKLists(std::vector<ListNode *> &&lists) {
 
     }
     return head->next;
+}
+
+
+ListNode *LinkedListQuiz::swapPairs(ListNode *head) {
+
 }
