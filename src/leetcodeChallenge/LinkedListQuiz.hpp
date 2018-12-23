@@ -19,6 +19,10 @@ public:
 
     // 21. Merge Two Sorted Lists
     ListNode* mergeTwoLists(ListNode* l1, ListNode* l2);
+
+
+    // 23. Merge k Sorted Lists
+    ListNode* mergeKLists(std::vector<ListNode*>&& lists);
 };
 
 

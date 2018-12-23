@@ -83,3 +83,15 @@ TEST (LinkedListQuiz, Merge_Two_Sorted_Lists) {
     ListNode *ans = lq.mergeTwoLists(l1, l2);
     printListNode(ans);
 }
+
+TEST (LinkedListQuiz, Merge_K_Sorted_Lists) {
+    ListNode *l1 = new ListNode(1, new ListNode(4, new ListNode(5)));
+    ListNode *l2 = new ListNode(1, new ListNode(3, new ListNode(4)));
+    ListNode *l3 = new ListNode(2, new ListNode(6));
+    // Output: 1->1->2->3->4->4->5->6
+
+//    ListNode *ans = lq.mergeKLists({l1, l2, l3});
+    ListNode *ans = lq.mergeKLists({});
+
+    printListNode(ans);
+}

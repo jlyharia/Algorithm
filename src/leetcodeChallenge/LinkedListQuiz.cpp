@@ -4,6 +4,7 @@
 
 #include "LinkedListQuiz.hpp"
 #include <memory>
+#include <queue>
 
 /**
  *
@@ -93,5 +94,34 @@ ListNode *LinkedListQuiz::mergeTwoLists(ListNode *l1, ListNode *l2) {
         cur = cur->next;
     }
     cur->next = l1 ? l1 : l2;
+    return head->next;
+}
+
+
+ListNode *LinkedListQuiz::mergeKLists(std::vector<ListNode *> &&lists) {
+    auto comp = [](const ListNode *l1, const ListNode *l2) {
+        return l1->val > l2->val;
+    };
+    std::priority_queue<ListNode *, std::vector<ListNode *>, decltype(comp)> priorityQueue(comp);
+
+    for (const auto &i: lists) {
+        if(i) { // null list
+            priorityQueue.push(i);
+        }
+    }
+
+    ListNode *head = new ListNode(0);
+    ListNode *cur = head;
+
+    while (!priorityQueue.empty()) {
+        ListNode *top = priorityQueue.top();
+        cur->next = top;
+        priorityQueue.pop();
+        cur = cur->next;
+        if (top->next) {
+            priorityQueue.push(top->next);
+        }
+
+    }
     return head->next;
 }
