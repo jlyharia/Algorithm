@@ -144,7 +144,7 @@ ListNode *LinkedListQuiz::reverseList(ListNode *head) {
  */
 ListNode *LinkedListQuiz::swapPairs(ListNode *head) {
     ListNode *dummy = new ListNode(0);
-    dummy ->next = head;
+    dummy->next = head;
     ListNode *cur = head;
     ListNode *prev = dummy;
     while (cur && cur->next) {
@@ -158,4 +158,9 @@ ListNode *LinkedListQuiz::swapPairs(ListNode *head) {
     head = dummy->next;
     delete dummy;
     return head;
+}
+
+
+ListNode *LinkedListQuiz::reverseKGroup(ListNode *head, int k) {
+
 }

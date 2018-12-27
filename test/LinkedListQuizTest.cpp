@@ -115,3 +115,11 @@ TEST (LinkedListQuiz, Swap_Nodes_in_Pairs) {
         printListNode(ans);
     }
 }
+
+TEST (LinkedListQuiz, Reverse_Nodes_in_k_Group) {
+    {
+        ListNode *l1 = new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(4, new ListNode(5)))));
+        ListNode *ans = lq.reverseKGroup(l1, 2);
+        printListNode(ans);
+    }
+}
