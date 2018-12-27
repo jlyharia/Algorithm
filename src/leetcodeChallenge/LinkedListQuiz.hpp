@@ -11,8 +11,8 @@ class LinkedListQuiz {
 public:
     ListNode *addTwoNumbers(ListNode *l1, ListNode *l2);
 
-
-    ListNode *reverseList(ListNode *node);
+    // 206. Reverse Linked List
+    ListNode *reverseList(ListNode *head);
 
     // 19. Remove Nth Node From End of List
     ListNode *removeNthFromEnd(ListNode *head, int n);

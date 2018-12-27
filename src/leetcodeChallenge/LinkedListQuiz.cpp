@@ -127,6 +127,22 @@ ListNode *LinkedListQuiz::mergeKLists(std::vector<ListNode *> &&lists) {
 }
 
 
+ListNode *LinkedListQuiz::reverseList(ListNode *head) {
+    ListNode *prev = nullptr;
+    ListNode *cur = head;
+    while (cur) {
+        ListNode *temp = cur->next;
+        cur->next = prev;
+        prev = cur;
+        cur = temp;
+    }
+    return prev;
+}
+
+/**
+ * 1) Your algorithm should use only constant extra space.<br />
+ * 2) You may not modify the values in the list's nodes, only nodes itself may be changed.
+ */
 ListNode *LinkedListQuiz::swapPairs(ListNode *head) {
 
 }
