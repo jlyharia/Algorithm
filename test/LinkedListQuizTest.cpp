@@ -104,7 +104,14 @@ TEST (LinkedListQuiz, Reverse_Linked_List) {
 
 TEST (LinkedListQuiz, Swap_Nodes_in_Pairs) {
     // Given 1->2->3->4, you should return the list as 2->1->4->3.
-    ListNode *l1 = new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(4, new ListNode(5)))));
-    ListNode *ans = lq.swapPairs(l1);
-    printListNode(ans);
+    {
+        ListNode *l1 = new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(4, new ListNode(5)))));
+        ListNode *ans = lq.swapPairs(l1);
+        printListNode(ans);
+    }
+    {
+        ListNode *l1 = new ListNode(1, new ListNode(2));
+        ListNode *ans = lq.swapPairs(l1);
+        printListNode(ans);
+    }
 }

@@ -3,7 +3,6 @@
 //
 
 #include "LinkedListQuiz.hpp"
-#include <memory>
 #include <queue>
 
 /**
@@ -144,5 +143,19 @@ ListNode *LinkedListQuiz::reverseList(ListNode *head) {
  * 2) You may not modify the values in the list's nodes, only nodes itself may be changed.
  */
 ListNode *LinkedListQuiz::swapPairs(ListNode *head) {
-
+    ListNode *dummy = new ListNode(0);
+    dummy ->next = head;
+    ListNode *cur = head;
+    ListNode *prev = dummy;
+    while (cur && cur->next) {
+        prev->next = cur->next;
+        prev = cur;
+        ListNode *temp = cur->next->next;
+        cur->next->next = cur;
+        cur->next = temp;
+        cur = temp;
+    }
+    head = dummy->next;
+    delete dummy;
+    return head;
 }
