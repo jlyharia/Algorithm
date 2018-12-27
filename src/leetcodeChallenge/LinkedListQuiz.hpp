@@ -27,7 +27,10 @@ public:
     ListNode *swapPairs(ListNode *head);
 
     // 25. Reverse Nodes in k-Group
-    ListNode *reverseKGroup(ListNode *head, int k);
+    ListNode *reverseKGroup(ListNode *head, const int k);
+
+private:
+    void reverseKGroupHelper(ListNode *start, ListNode *end);
 };
 
 

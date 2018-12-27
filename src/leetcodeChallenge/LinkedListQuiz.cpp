@@ -141,6 +141,8 @@ ListNode *LinkedListQuiz::reverseList(ListNode *head) {
 /**
  * 1) Your algorithm should use only constant extra space.<br />
  * 2) You may not modify the values in the list's nodes, only nodes itself may be changed.
+ *
+ * pay attention on link and node
  */
 ListNode *LinkedListQuiz::swapPairs(ListNode *head) {
     ListNode *dummy = new ListNode(0);
@@ -161,6 +163,39 @@ ListNode *LinkedListQuiz::swapPairs(ListNode *head) {
 }
 
 
-ListNode *LinkedListQuiz::reverseKGroup(ListNode *head, int k) {
+ListNode *LinkedListQuiz::reverseKGroup(ListNode *head, const int k) {
+    ListNode *dummy = new ListNode(0);
+    dummy->next = head;
+    ListNode *start = dummy;
+    ListNode *end = dummy;
+    while (true) {
+        int cn = 0;
+        for (; cn < k && end; cn--) {
+            end = end->next;
+        }
+        if (cn == k - 1) {
+            ListNode * temp = en
 
+        } else {
+            break;
+        }
+    }
+
+    head = dummy->next;
+    delete dummy;
+    return head;
+}
+
+void LinkedListQuiz::reverseKGroupHelper(ListNode *start, ListNode *end) {
+    ListNode *cur = start->next;
+    ListNode *prev = start;
+    while (prev != end) {
+        ListNode *temp = cur->next;
+        cur->next = prev;
+        prev = cur;
+        cur = temp;
+    }
+    // update new start and end
+    end = start;
+    start = prev;
 }
