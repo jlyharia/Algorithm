@@ -40,6 +40,9 @@ public:
 
     // 26. Remove Duplicates from Sorted Array
     int removeDuplicates(vector<int>& nums);
+
+    // 27. Remove Element
+    int removeElement(vector<int>& nums, int val);
 };
 
 #endif /* ARRAYQUIZ_HPP_ */

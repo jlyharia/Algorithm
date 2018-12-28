@@ -89,3 +89,12 @@ TEST (ArrayTest, Remove_Duplicates_from_Sorted_Array) {
     vector<int> exp = {0, 1, 2, 3, 4, 2, 2, 3, 3, 4};
     EXPECT_EQ(exp, nums);
 }
+
+TEST (ArrayTest, Remove_Element) {
+    vector<int> nums = {0, 1, 2, 2, 3, 0, 4, 2};
+    int ln = aq.removeElement(nums, 2);
+    EXPECT_EQ(5, ln);
+    vector<int> exp = {0, 1, 4, 0, 3, 0, 4, 2};
+    EXPECT_EQ(exp, nums);
+}
+
