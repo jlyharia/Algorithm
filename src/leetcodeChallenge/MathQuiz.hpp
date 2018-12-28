@@ -7,6 +7,7 @@
 
 #include <climits>
 #include <string>
+
 using namespace std;
 
 class MathQuiz {
@@ -20,6 +21,9 @@ public:
 
     // 9. Palindrome Number
     bool isPalindrome(int x);
+
+    // 29. Divide Two Integers
+    int divide(int dividend, int divisor);
 };
 
 

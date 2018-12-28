@@ -49,3 +49,7 @@ bool MathQuiz::isPalindrome(int x) {
     }
     return true;
 }
+
+int MathQuiz::divide(int dividend, int divisor) {
+
+}

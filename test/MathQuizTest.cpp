@@ -36,3 +36,8 @@ TEST(MathQuiz, Palindrome_Number) {
 
 //    cout << mt.isPalindrome(-121) << '\n';
 }
+
+
+TEST(MathQuiz, Divide_Two_Integers) {
+
+}
