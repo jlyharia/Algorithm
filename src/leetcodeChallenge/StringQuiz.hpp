@@ -34,6 +34,9 @@ public:
     // 20. Valid Parentheses
     bool isValid(string s);
 
+    // 28. Implement strStr()
+    int strStr(string haystack, string needle);
+
 private:
     int expandAroundCenter(string s, int begin, int end);
 

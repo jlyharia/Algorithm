@@ -65,5 +65,9 @@ TEST (StringQuiz, Valid_Parentheses) {
     EXPECT_EQ(true, sq.isValid("{[]}"));
     EXPECT_EQ(false, sq.isValid("]"));
     EXPECT_EQ(false, sq.isValid("(])"));
+}
 
+TEST (StringQuiz, Implement_strStr) {
+    EXPECT_EQ(2, sq.strStr("hello", "ll"));
+    EXPECT_EQ(-1, sq.strStr("aaaaa", "bba"));
 }
