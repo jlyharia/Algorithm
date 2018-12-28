@@ -120,6 +120,15 @@ TEST (LinkedListQuiz, Reverse_Nodes_in_k_Group) {
     {
         ListNode *l1 = new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(4, new ListNode(5)))));
         ListNode *ans = lq.reverseKGroup(l1, 3);
-        printListNode(ans);
+        EXPECT_EQ(3, ans->val);
+        ans = ans->next;
+        EXPECT_EQ(2, ans->val);
+        ans = ans->next;
+        EXPECT_EQ(1, ans->val);
+        ans = ans->next;
+        EXPECT_EQ(4, ans->val);
+        ans = ans->next;
+        EXPECT_EQ(5, ans->val);
+        // printListNode(ans);
     }
 }
