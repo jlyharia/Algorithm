@@ -39,5 +39,5 @@ TEST(MathQuiz, Palindrome_Number) {
 
 
 TEST(MathQuiz, Divide_Two_Integers) {
-
+    EXPECT_EQ(6, mt.divide(20, 3));
 }
