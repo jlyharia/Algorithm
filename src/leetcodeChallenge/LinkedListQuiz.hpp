@@ -30,7 +30,7 @@ public:
     ListNode *reverseKGroup(ListNode *head, const int k);
 
 private:
-    void reverseKGroupHelper(ListNode *start, ListNode *end);
+    void reverseKGroupHelper(ListNode *&start, ListNode *&end);
 };
 
 

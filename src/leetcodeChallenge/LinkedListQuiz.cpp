@@ -166,16 +166,24 @@ ListNode *LinkedListQuiz::swapPairs(ListNode *head) {
 ListNode *LinkedListQuiz::reverseKGroup(ListNode *head, const int k) {
     ListNode *dummy = new ListNode(0);
     dummy->next = head;
-    ListNode *start = dummy;
-    ListNode *end = dummy;
+    ListNode *prev = dummy;
+    ListNode *start = head;
+    ListNode *end = head;
     while (true) {
-        int cn = 0;
-        for (; cn < k && end; cn--) {
+        int cn = 1;
+        for (; cn < k && end; cn++) {
             end = end->next;
         }
-        if (cn == k - 1) {
-            ListNode * temp = en
-
+        // end exist mean the kth node exist, (corner case end is null but cn ==k)
+        // cn == k mean there are k node
+        if (end && cn == k) {
+            ListNode *nextStart = end->next;
+            reverseKGroupHelper(start, end);
+            prev->next = start;
+            prev = end;
+            start = nextStart;
+            end->next = nextStart;
+            end = nextStart;
         } else {
             break;
         }
@@ -186,7 +194,7 @@ ListNode *LinkedListQuiz::reverseKGroup(ListNode *head, const int k) {
     return head;
 }
 
-void LinkedListQuiz::reverseKGroupHelper(ListNode *start, ListNode *end) {
+void LinkedListQuiz::reverseKGroupHelper(ListNode *&start, ListNode *&end) {
     ListNode *cur = start->next;
     ListNode *prev = start;
     while (prev != end) {
