@@ -81,3 +81,11 @@ TEST (ArrayTest, _4_Sum) {
     }
 
 }
+
+TEST (ArrayTest, Remove_Duplicates_from_Sorted_Array) {
+    vector<int> nums = {0, 0, 1, 1, 1, 2, 2, 3, 3, 4};
+    int ln = aq.removeDuplicates(nums);
+    EXPECT_EQ(5, ln);
+    vector<int> exp = {0, 1, 2, 3, 4, 2, 2, 3, 3, 4};
+    EXPECT_EQ(exp, nums);
+}

@@ -181,7 +181,17 @@ vector<vector<int>> ArrayQuiz::fourSum(vector<int> &&nums, int target) {
     return ans;
 }
 
-
+int ArrayQuiz::removeDuplicates(vector<int> &nums) {
+    if (nums.empty()) return 0;
+    int i = 0;
+    for (int j = 1; j < nums.size(); j++) {
+        if (nums[j] != nums[i]) {
+            i++;
+            nums[i] = nums[j];
+        }
+    }
+    return i + 1;
+}
 
 
 

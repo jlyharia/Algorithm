@@ -37,6 +37,9 @@ public:
 
     // 18. 4Sum
     vector<vector<int>> fourSum(vector<int>&& nums, int target);
+
+    // 26. Remove Duplicates from Sorted Array
+    int removeDuplicates(vector<int>& nums);
 };
 
 #endif /* ARRAYQUIZ_HPP_ */
