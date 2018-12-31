@@ -48,13 +48,21 @@ vector<string> BackTracking::generateParenthesis(int n) {
 void BackTracking::generateParenthesisHelper(int L, int R, string res, vector<string> &ans) {
     if (L == 0 && R == 0) {
         ans.push_back(res);
-    } else if (L >=0 && L <= R) {
+    } else if (L >= 0 && L <= R) {
         generateParenthesisHelper(L - 1, R, res + '(', ans);
         generateParenthesisHelper(L, R - 1, res + ')', ans);
     }
 }
 
-
-void BackTracking::nextPermutation(vector<int>& nums){
-
+/**
+ * http://www.cnblogs.com/grandyang/p/4428207.html
+ */
+void BackTracking::nextPermutation(vector<int> &nums) {
+    int n = nums.size(), i = n - 2, j = n - 1;
+    while (i >= 0 && nums[i] >= nums[i + 1]) --i;
+    if (i >= 0) {
+        while (nums[j] <= nums[i]) --j;
+        swap(nums[i], nums[j]);
+    }
+    reverse(nums.begin() + i + 1, nums.end());
 }
