@@ -37,8 +37,14 @@ public:
     // 28. Implement strStr()
     int strStr(string haystack, string needle);
 
+    // 30. Substring with Concatenation of All Words
+    vector<int> findSubstring(string s, vector<string> &&words);
+
+
 private:
     int expandAroundCenter(string s, int begin, int end);
+
+    bool checkSubstring(string S, int start, unordered_map<string, int> &wordCount, int wordSize, int totalWords);
 
 };
 

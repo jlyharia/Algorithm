@@ -71,3 +71,11 @@ TEST (StringQuiz, Implement_strStr) {
     EXPECT_EQ(2, sq.strStr("hello", "ll"));
     EXPECT_EQ(-1, sq.strStr("aaaaa", "bba"));
 }
+
+TEST (StringQuiz, Substring_with_Concatenation_of_All_Words) {
+    vector<int> ans1 = {0, 9};
+    EXPECT_EQ(ans1, sq.findSubstring("barfoothefoobarman", {"foo", "bar"}));
+
+//    vector<int> ans2 = {};
+//    EXPECT_EQ(ans2, sq.findSubstring("wordgoodgoodgoodbestword", {"word", "good", "best", "word"}));
+}

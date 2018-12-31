@@ -184,3 +184,36 @@ int StringQuiz::strStr(string haystack, string needle) {
     }
     return -1;
 }
+
+vector<int> StringQuiz::findSubstring(string s, vector<string> &&words) {
+    vector<int> allPos;
+    if (words.empty()) return allPos;
+    int totalWords = words.size();
+    int wordSize = words[0].size();
+    int totalLen = wordSize * totalWords;
+    if (s.size() < totalLen) return allPos;
+
+    unordered_map<string, int> wordCount;
+    for (int i = 0; i < totalWords; i++)
+        wordCount[words[i]]++;
+
+    for (int i = 0; i <= s.size() - totalLen; i++) {
+        if (checkSubstring(s, i, wordCount, wordSize, totalWords))
+            allPos.push_back(i);
+    }
+    return allPos;
+}
+
+bool
+StringQuiz::checkSubstring(string S, int start, unordered_map<string, int> &wordCount, int wordSize, int totalWords) {
+    if (S.size() - start + 1 < wordSize * totalWords) return false;
+    unordered_map<string, int> wordFound;
+
+    for (int i = 0; i < totalWords; i++) {
+        string curWord = S.substr(start + i * wordSize, wordSize);
+        if (!wordCount.count(curWord)) return false;
+        wordFound[curWord]++;
+        if (wordFound[curWord] > wordCount[curWord]) return false;
+    }
+    return true;
+}
