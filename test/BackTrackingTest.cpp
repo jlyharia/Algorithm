@@ -28,3 +28,16 @@ TEST (BackTracking, Generate_Parentheses) {
         EXPECT_EQ(ss, bt.generateParenthesis(3));
     }
 }
+
+TEST (BackTracking, Next_Permutation) {
+    vector<int> nums1 = {1, 2, 3};
+    bt.nextPermutation(nums1);
+    vector<int> ans1 = {1, 3, 2};
+    EXPECT_EQ(ans1, nums1);
+
+
+    vector<int> nums2 = {3, 2, 1};
+    bt.nextPermutation(nums2);
+    vector<int> ans2 = {1, 2, 3};
+    EXPECT_EQ(ans2, nums2);
+}

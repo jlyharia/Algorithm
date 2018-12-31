@@ -185,11 +185,21 @@ int StringQuiz::strStr(string haystack, string needle) {
     return -1;
 }
 
+/**
+ *
+ * You are given a string, s, and a list of words, words, that are all of the same length.
+ *
+ * Find all starting indices of substring(s) in s that is a concatenation of each word in words exactly once
+ * and without any intervening characters
+ */
 vector<int> StringQuiz::findSubstring(string s, vector<string> &&words) {
     vector<int> allPos;
     if (words.empty()) return allPos;
     int totalWords = words.size();
+
+    // all words are the same length
     int wordSize = words[0].size();
+
     int totalLen = wordSize * totalWords;
     if (s.size() < totalLen) return allPos;
 
@@ -198,6 +208,7 @@ vector<int> StringQuiz::findSubstring(string s, vector<string> &&words) {
         wordCount[words[i]]++;
 
     for (int i = 0; i <= s.size() - totalLen; i++) {
+        // each time we check if there is substring within s[i~end]
         if (checkSubstring(s, i, wordCount, wordSize, totalWords))
             allPos.push_back(i);
     }
@@ -211,7 +222,8 @@ StringQuiz::checkSubstring(string S, int start, unordered_map<string, int> &word
 
     for (int i = 0; i < totalWords; i++) {
         string curWord = S.substr(start + i * wordSize, wordSize);
-        if (!wordCount.count(curWord)) return false;
+        // if word does not exist in dictionary
+        if (wordCount.find(curWord) == wordCount.end()) return false;
         wordFound[curWord]++;
         if (wordFound[curWord] > wordCount[curWord]) return false;
     }

@@ -76,6 +76,6 @@ TEST (StringQuiz, Substring_with_Concatenation_of_All_Words) {
     vector<int> ans1 = {0, 9};
     EXPECT_EQ(ans1, sq.findSubstring("barfoothefoobarman", {"foo", "bar"}));
 
-//    vector<int> ans2 = {};
-//    EXPECT_EQ(ans2, sq.findSubstring("wordgoodgoodgoodbestword", {"word", "good", "best", "word"}));
+    vector<int> ans2 = {};
+    EXPECT_EQ(ans2, sq.findSubstring("wordgoodgoodgoodbestword", {"word", "good", "best", "word"}));
 }

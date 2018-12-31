@@ -20,6 +20,8 @@ public:
     // 22. Generate Parentheses
     vector<string> generateParenthesis(int n);
 
+    // 31. Next Permutation
+    void nextPermutation(vector<int>& nums);
 private:
     void
     letterCombinationsHelper(vector<string> &ans, const string digits, string res, int idx, const unordered_map<char, string>& map);

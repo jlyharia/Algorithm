@@ -53,3 +53,8 @@ void BackTracking::generateParenthesisHelper(int L, int R, string res, vector<st
         generateParenthesisHelper(L, R - 1, res + ')', ans);
     }
 }
+
+
+void BackTracking::nextPermutation(vector<int>& nums){
+
+}
