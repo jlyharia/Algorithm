@@ -50,6 +50,9 @@ public:
     // 34. Find First and Last Position of Element in Sorted Array
     vector<int> searchRange(vector<int> &&nums, int target);
 
+    // 35. Search Insert Position
+    int searchInsert(vector<int> &&nums, int target);
+
 private:
     int searchRangeHelper(const vector<int> &nums, const int &target, bool isLeft);
 };

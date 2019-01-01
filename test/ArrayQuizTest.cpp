@@ -111,3 +111,10 @@ TEST (ArrayTest, Find_First_and_Last_Position_of_Element_in_Sorted_Array) {
     vector<int> ans2 = {-1, -1};
     EXPECT_EQ(ans2, aq.searchRange({5, 7, 7, 8, 8, 10}, 6));
 }
+
+TEST (ArrayTest, Search_Insert_Position) {
+    EXPECT_EQ(2, aq.searchInsert({1, 3, 5, 6}, 5));
+    EXPECT_EQ(1, aq.searchInsert({1, 3, 5, 6}, 2));
+    EXPECT_EQ(4, aq.searchInsert({1, 3, 5, 6}, 7));
+    EXPECT_EQ(0, aq.searchInsert({1, 3, 5, 6}, 0));
+}
