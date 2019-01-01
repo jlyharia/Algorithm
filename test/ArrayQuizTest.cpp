@@ -98,3 +98,16 @@ TEST (ArrayTest, Remove_Element) {
     EXPECT_EQ(exp, nums);
 }
 
+TEST (ArrayTest, Search_in_Rotated_Sorted_Array) {
+    EXPECT_EQ(4, aq.search({4, 5, 6, 7, 0, 1, 2}, 0));
+
+    EXPECT_EQ(-1, aq.search({4, 5, 6, 7, 0, 1, 2}, 3));
+}
+
+TEST (ArrayTest, Find_First_and_Last_Position_of_Element_in_Sorted_Array) {
+    vector<int> ans1 = {3, 4};
+    EXPECT_EQ(ans1, aq.searchRange({5, 7, 7, 8, 8, 10}, 8));
+
+    vector<int> ans2 = {-1, -1};
+    EXPECT_EQ(ans2, aq.searchRange({5, 7, 7, 8, 8, 10}, 6));
+}

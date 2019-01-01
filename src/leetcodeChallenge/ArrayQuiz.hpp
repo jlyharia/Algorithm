@@ -30,19 +30,28 @@ public:
     int maxArea(vector<int> &&height);
 
     // 15. 3Sum
-    vector<vector<int>> threeSum(vector<int>&& nums);
+    vector<vector<int>> threeSum(vector<int> &&nums);
 
     // 16. 3Sum Closest
-    int threeSumClosest(vector<int>&& nums, int target);
+    int threeSumClosest(vector<int> &&nums, int target);
 
     // 18. 4Sum
-    vector<vector<int>> fourSum(vector<int>&& nums, int target);
+    vector<vector<int>> fourSum(vector<int> &&nums, int target);
 
     // 26. Remove Duplicates from Sorted Array
-    int removeDuplicates(vector<int>& nums);
+    int removeDuplicates(vector<int> &nums);
 
     // 27. Remove Element
-    int removeElement(vector<int>& nums, int val);
+    int removeElement(vector<int> &nums, int val);
+
+    // 33. Search in Rotated Sorted Array
+    int search(vector<int> &&nums, int target);
+
+    // 34. Find First and Last Position of Element in Sorted Array
+    vector<int> searchRange(vector<int> &&nums, int target);
+
+private:
+    int searchRangeHelper(const vector<int> &nums, const int &target, bool isLeft);
 };
 
 #endif /* ARRAYQUIZ_HPP_ */

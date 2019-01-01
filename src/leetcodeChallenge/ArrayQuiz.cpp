@@ -208,3 +208,50 @@ int ArrayQuiz::removeElement(vector<int> &nums, int val) {
     return n;
 }
 
+/**
+ * http://www.cnblogs.com/grandyang/p/4325648.html
+ */
+int ArrayQuiz::search(vector<int> &&nums, int target) {
+    int left = 0, right = nums.size() - 1;
+    while (left <= right) {
+        int mid = (left + right) / 2;
+        if (nums[mid] == target) return mid;
+        else if (nums[mid] < nums[right]) {
+            if (nums[mid] < target && nums[right] >= target) left = mid + 1;
+            else right = mid - 1;
+        } else {
+            if (nums[left] <= target && nums[mid] > target) right = mid - 1;
+            else left = mid + 1;
+        }
+    }
+    return -1;
+}
+
+
+vector<int> ArrayQuiz::searchRange(vector<int> &&nums, int target) {
+    vector<int> ans = {-1, -1};
+    int leftEdge = searchRangeHelper(nums, target, true);
+    if (leftEdge == nums.size() || nums[leftEdge] != target) {
+        return ans;
+    }
+
+    ans[0] = leftEdge;
+    ans[1] = searchRangeHelper(nums, target, false) - 1;
+
+    return ans;
+}
+
+int ArrayQuiz::searchRangeHelper(const vector<int> &nums, const int &target, bool isLeft) {
+    int left = 0;
+    int right = nums.size();
+
+    while (left < right) {
+        int mid = (left + right) / 2;
+        if (nums[mid] > target || (isLeft && nums[mid] == target)) {
+            right = mid;
+        } else {
+            left = mid + 1;
+        }
+    }
+    return left;
+}
