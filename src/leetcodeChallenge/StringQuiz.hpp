@@ -40,6 +40,8 @@ public:
     // 30. Substring with Concatenation of All Words
     vector<int> findSubstring(string s, vector<string> &&words);
 
+    // 32. Longest Valid Parentheses
+    int longestValidParentheses(string s);
 
 private:
     int expandAroundCenter(string s, int begin, int end);

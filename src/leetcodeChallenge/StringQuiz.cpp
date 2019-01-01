@@ -229,3 +229,44 @@ StringQuiz::checkSubstring(string S, int start, unordered_map<string, int> &word
     }
     return true;
 }
+
+/**
+ *
+ * official leetcode solution
+ */
+
+int StringQuiz::longestValidParentheses(string s) {
+    int left = 0;
+    int right = 0;
+    int maxLength = 0;
+    // left to right
+    for (const char &c:s) {
+        if (c == '(') {
+            left++;
+        } else if (c == ')') {
+            right++;
+        }
+        if (left == right) {
+            maxLength = std::max(maxLength, 2 * right);
+        } else if (right > left) {
+            left = right = 0;
+        }
+    }
+    left = right = 0;
+
+    // right to left
+    for (int i = s.size() - 1; i >= 0; i--) {
+        if (s[i] == '(') {
+            left++;
+        } else if (s[i] == ')') {
+            right++;
+        }
+
+        if (left == right) {
+            maxLength = std::max(maxLength, 2 * left);
+        } else if (left > right) {
+            left = right = 0;
+        }
+    }
+    return maxLength;
+}

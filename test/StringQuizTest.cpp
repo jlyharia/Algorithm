@@ -79,3 +79,10 @@ TEST (StringQuiz, Substring_with_Concatenation_of_All_Words) {
     vector<int> ans2 = {};
     EXPECT_EQ(ans2, sq.findSubstring("wordgoodgoodgoodbestword", {"word", "good", "best", "word"}));
 }
+
+TEST (StringQuiz, Longest_Valid_Parentheses) {
+
+    EXPECT_EQ(2, sq.longestValidParentheses("(()"));
+
+    EXPECT_EQ(4, sq.longestValidParentheses(")()())"));
+}
