@@ -53,6 +53,9 @@ public:
     // 35. Search Insert Position
     int searchInsert(vector<int> &&nums, int target);
 
+    // 75. Sort Colors
+    void sortColors(vector<int> &nums);
+
 private:
     int searchRangeHelper(const vector<int> &nums, const int &target, bool isLeft);
 };

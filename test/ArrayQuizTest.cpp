@@ -118,3 +118,19 @@ TEST (ArrayTest, Search_Insert_Position) {
     EXPECT_EQ(4, aq.searchInsert({1, 3, 5, 6}, 7));
     EXPECT_EQ(0, aq.searchInsert({1, 3, 5, 6}, 0));
 }
+
+TEST (ArrayTest, Sort_Colors) {
+    {
+        vector<int> nums = {2, 0, 2, 1, 1, 0};
+        vector<int> ans = {0, 0, 1, 1, 2, 2};
+        aq.sortColors(nums);
+        EXPECT_EQ(ans, nums);
+    }
+
+    {
+        vector<int> nums = {2, 0, 1};
+        vector<int> ans = {0, 1, 2};
+        aq.sortColors(nums);
+        EXPECT_EQ(ans, nums);
+    }
+}

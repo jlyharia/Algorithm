@@ -5,6 +5,7 @@
  *      Author: johnny
  */
 
+#include <Utils.hpp>
 #include "ArrayQuiz.hpp"
 
 vector<int> ArrayQuiz::twoSum(vector<int> &&nums, int target) {
@@ -274,4 +275,21 @@ int ArrayQuiz::searchInsert(vector<int> &&nums, int target) {
         }
     }
     return left;
+}
+
+/**
+ *
+ * http://www.cnblogs.com/grandyang/p/4341243.html
+ */
+void ArrayQuiz::sortColors(vector<int> &nums) {
+    int L = 0; // 0's location
+    int R = nums.size() - 1; // 2's location
+    for (int i = 0; i <= R; i++) {
+        if (nums[i] == 0) {
+            // swap 0 to L
+            std::swap(nums[i], nums[L++]);
+        } else if (nums[i] == 2) {
+            std::swap(nums[i--], nums[R--]);
+        }
+    }
 }
