@@ -4,7 +4,6 @@
 
 #include "BackTracking.hpp"
 
-
 vector<string> BackTracking::letterCombinations(string digits) {
     if (digits.empty()) return {};
     const unordered_map<char, string> map{
@@ -65,4 +64,58 @@ void BackTracking::nextPermutation(vector<int> &nums) {
         swap(nums[i], nums[j]);
     }
     reverse(nums.begin() + i + 1, nums.end());
+}
+
+bool BackTracking::isValidSudoku(vector<vector<char>> &board) {
+    // row
+    for (int i = 0; i < 9; i++) {
+        std::vector<bool> check(9, false);
+        for (int j = 0; j < 9; j++) {
+            if (std::isdigit(board[i][j])) {
+                int d = board[i][j] - '0';
+                if (check[d - 1]) {
+                    return false;
+                } else {
+                    check[d - 1] = true;
+                }
+            }
+        }
+    }
+    // column
+    for (int j = 0; j < 9; j++) {
+        std::vector<bool> check(9, false);
+        for (int i = 0; i < 9; i++) {
+            if (std::isdigit(board[i][j])) {
+                int d = board[i][j] - '0';
+                if (check[d - 1]) {
+                    return false;
+                } else {
+                    check[d - 1] = true;
+                }
+            }
+        }
+    }
+
+    // 3x3 section
+    for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 3; j++) {
+            std::vector<bool> check(9, false);
+            // section
+            for (int si = 0; si < 3; si++) {
+                for (int sj = 0; sj < 3; sj++) {
+                    int r = 3 * i + si;
+                    int c = 3 * j + sj;
+                    if (std::isdigit(board[r][c])) {
+                        int d = board[r][c] - '0';
+                        if (check[d - 1]) {
+                            return false;
+                        } else {
+                            check[d - 1] = true;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    return true;
 }

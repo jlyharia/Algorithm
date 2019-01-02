@@ -21,10 +21,15 @@ public:
     vector<string> generateParenthesis(int n);
 
     // 31. Next Permutation
-    void nextPermutation(vector<int>& nums);
+    void nextPermutation(vector<int> &nums);
+
+    // 36. Valid Sudoku
+    bool isValidSudoku(vector<vector<char>> &board);
+
 private:
     void
-    letterCombinationsHelper(vector<string> &ans, const string digits, string res, int idx, const unordered_map<char, string>& map);
+    letterCombinationsHelper(vector<string> &ans, const string digits, string res, int idx,
+                             const unordered_map<char, string> &map);
 
     void generateParenthesisHelper(int L, int R, string res, vector<string> &ans);
 };
