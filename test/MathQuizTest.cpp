@@ -22,22 +22,28 @@ TEST(MathQuiz, String_to_Integer_atoi) {
 
 
 TEST(MathQuiz, Palindrome_Number) {
-//    cout << mt.isPalindrome(121) << '\n';
-//
-//    cout << mt.isPalindrome(123) << '\n';
-//
-//    cout << mt.isPalindrome(-121) << '\n';
-//
-//    cout << mt.isPalindrome(99) << '\n';
-//    cout << mt.isPalindrome(0) << '\n';
+    EXPECT_TRUE(mt.isPalindrome(121));
 
-    cout << mt.isPalindrome(1001) << '\n';
+    EXPECT_FALSE(mt.isPalindrome(123));
+
+    EXPECT_FALSE(mt.isPalindrome(-121));
+
+    EXPECT_TRUE(mt.isPalindrome(99));
+    EXPECT_TRUE(mt.isPalindrome(0));
+
+    EXPECT_TRUE(mt.isPalindrome(1001));
 
 
-//    cout << mt.isPalindrome(-121) << '\n';
+    EXPECT_FALSE(mt.isPalindrome(-121));
 }
 
 
 TEST(MathQuiz, Divide_Two_Integers) {
     EXPECT_EQ(6, mt.divide(20, 3));
+}
+
+TEST(MathQuiz, Pow_x_n) {
+
+    EXPECT_EQ(1024.00000, (mt.myPow(2.00000, 10)));
+
 }

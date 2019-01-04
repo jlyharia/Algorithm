@@ -24,6 +24,10 @@ public:
 
     // 29. Divide Two Integers
     int divide(int dividend, int divisor);
+
+    // 50. Pow(x, n)
+    double myPow(double x, int n);
+
 };
 
 

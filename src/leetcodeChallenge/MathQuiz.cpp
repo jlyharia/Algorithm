@@ -56,7 +56,9 @@ bool MathQuiz::isPalindrome(int x) {
  * http://bangbingsyb.blogspot.com/2014/11/divide-two-integers-divide-two-integers.html
  */
 int MathQuiz::divide(int dividend, int divisor) {
-    long long m = abs((long long) dividend), n = abs((long long) divisor), res = 0;
+    long long m = abs((long long) dividend);
+    long long n = abs((long long) divisor);
+    long long res = 0;
     if (m < n) return 0;
     while (m >= n) {
         long long t = n, p = 1;
@@ -69,4 +71,13 @@ int MathQuiz::divide(int dividend, int divisor) {
     }
     if ((dividend < 0) ^ (divisor < 0)) res = -res;
     return res > INT_MAX ? INT_MAX : res;
+}
+
+
+/**
+ *
+ * http://www.cnblogs.com/grandyang/p/4383775.html
+ */
+double MathQuiz::myPow(double x, int n) {
+
 }
