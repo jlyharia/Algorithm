@@ -119,3 +119,30 @@ bool BackTracking::isValidSudoku(vector<vector<char>> &board) {
     }
     return true;
 }
+
+void BackTracking::solveSudoku(vector<vector<char>> &board) {
+
+}
+
+bool isValidSudokuNumber(vector<vector<char>> &board, int x, int y) {
+    vector<int> check(9, false);
+    // row
+    for (int j = 0; j < 9; j++) {
+        if (j != y && std::isdigit(board[x][j])) {
+            int d = board[x][j] - '0';
+            if (d == board[x][j]) {
+                return false;
+            }
+        }
+    }
+    // column
+    for (int i = 0; i < 9; i++) {
+        if (i != x && std::isdigit(board[i][y])) {
+            int d = board[i][y] - '0';
+            if (d == board[i][y]) {
+                return false;
+            }
+        }
+    }
+    return true;
+}

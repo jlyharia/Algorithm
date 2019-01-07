@@ -26,6 +26,9 @@ public:
     // 36. Valid Sudoku
     bool isValidSudoku(vector<vector<char>> &board);
 
+    // 37. Sudoku Solver
+    void solveSudoku(vector<vector<char>> &board);
+
 private:
     void
     letterCombinationsHelper(vector<string> &ans, const string digits, string res, int idx,
