@@ -121,6 +121,7 @@ bool BackTracking::isValidSudoku(vector<vector<char>> &board) {
 }
 
 void BackTracking::solveSudoku(vector<vector<char>> &board) {
+    if (board.empty() || board.size() != 9 || board[0].size() != 9) return;
     solveSudokuHelper(board, 0, 0);
 }
 
