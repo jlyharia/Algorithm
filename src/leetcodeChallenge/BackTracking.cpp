@@ -121,27 +121,42 @@ bool BackTracking::isValidSudoku(vector<vector<char>> &board) {
 }
 
 void BackTracking::solveSudoku(vector<vector<char>> &board) {
-
+    solveSudokuHelper(board, 0, 0);
 }
 
-bool isValidSudokuNumber(vector<vector<char>> &board, int x, int y) {
-    vector<int> check(9, false);
-    // row
-    for (int j = 0; j < 9; j++) {
-        if (j != y && std::isdigit(board[x][j])) {
-            int d = board[x][j] - '0';
-            if (d == board[x][j]) {
-                return false;
+bool BackTracking::solveSudokuHelper(vector<vector<char>> &board, int i, int j) {
+    if (i == 9) return true;
+    if (j >= 9) return solveSudokuHelper(board, i + 1, 0);
+    if (board[i][j] == '.') {
+        for (int k = 1; k < 10; k++) {
+            board[i][j] = (char) ('0' + k);
+            if (isValidSudokuNumber(board, i, j)) {
+                if (solveSudokuHelper(board, i, j + 1)) return true;
             }
+            board[i][j] = '.';
+        }
+    } else {
+        return solveSudokuHelper(board, i, j + 1);
+    }
+    return false;
+}
+
+bool BackTracking::isValidSudokuNumber(vector<vector<char>> &board, int i, int j) {
+    vector<int> check(9, false);
+    // col
+    for (int col = 0; col < 9; col++) {
+        if (col != j && board[i][j] == board[i][col]) return false;
+    }
+    // row
+    for (int row = 0; row < 9; row++) {
+        if (i != row && board[i][j] == board[row][j]) {
+            return false;
         }
     }
-    // column
-    for (int i = 0; i < 9; i++) {
-        if (i != x && std::isdigit(board[i][y])) {
-            int d = board[i][y] - '0';
-            if (d == board[i][y]) {
-                return false;
-            }
+    // section
+    for (int row = i / 3 * 3; row < i / 3 * 3 + 3; ++row) {
+        for (int col = j / 3 * 3; col < j / 3 * 3 + 3; ++col) {
+            if ((row != i || col != j) && board[i][j] == board[row][col]) return false;
         }
     }
     return true;

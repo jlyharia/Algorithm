@@ -35,6 +35,10 @@ private:
                              const unordered_map<char, string> &map);
 
     void generateParenthesisHelper(int L, int R, string res, vector<string> &ans);
+
+    bool solveSudokuHelper(vector<vector<char>> &board, int i, int j);
+
+    bool isValidSudokuNumber(vector<vector<char>> &board, int x, int y);
 };
 
 
