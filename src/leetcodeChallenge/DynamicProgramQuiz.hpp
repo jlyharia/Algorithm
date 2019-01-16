@@ -12,6 +12,8 @@ class DynamicProgramQuiz {
 public:
     // 70. Climbing Stairs
     int climbStairs(int n);
+
+    int coinChange(std::vector<int>& coins, int amount);
 };
 
 

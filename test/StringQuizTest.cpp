@@ -86,3 +86,11 @@ TEST (StringQuiz, Longest_Valid_Parentheses) {
 
     EXPECT_EQ(4, sq.longestValidParentheses(")()())"));
 }
+
+TEST (StringQuiz, Count_and_Say) {
+    EXPECT_EQ("1", sq.countAndSay(1));
+    EXPECT_EQ("11", sq.countAndSay(2));
+    EXPECT_EQ("21", sq.countAndSay(3));
+    EXPECT_EQ("1211", sq.countAndSay(4));
+    EXPECT_EQ("111221", sq.countAndSay(5));
+}

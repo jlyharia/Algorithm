@@ -43,6 +43,9 @@ public:
     // 32. Longest Valid Parentheses
     int longestValidParentheses(string s);
 
+    // 38. Count and Say
+    string countAndSay(int n);
+
 private:
     int expandAroundCenter(string s, int begin, int end);
 

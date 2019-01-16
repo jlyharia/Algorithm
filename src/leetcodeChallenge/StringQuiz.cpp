@@ -270,3 +270,25 @@ int StringQuiz::longestValidParentheses(string s) {
     }
     return maxLength;
 }
+/**
+ * https://blog.csdn.net/zhangxiao93/article/details/49183209
+ * 第n項：第n-1項的數字串從左到右讀出來
+ * http://www.cnblogs.com/grandyang/p/4086299.html
+ */
+string StringQuiz::countAndSay(int n) {
+    if (n <= 0) return "";
+    string res = "1";
+    while (--n) {
+        string cur = "";
+        for (int i = 0; i < res.size(); ++i) {
+            int cnt = 1;
+            while (i + 1 < res.size() && res[i] == res[i + 1]) {
+                ++cnt;
+                ++i;
+            }
+            cur += to_string(cnt) + res[i];
+        }
+        res = cur;
+    }
+    return res;
+}
