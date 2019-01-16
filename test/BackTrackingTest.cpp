@@ -101,3 +101,7 @@ TEST (BackTracking, Sudoku_Solver) {
     bt.solveSudoku(board1);
     EXPECT_EQ(ans, board1);
 }
+
+TEST (BackTracking, Combination_Sum) {
+    vector<vector<int>> ans = bt.combinationSum({2,3,6,7}, 7);
+}

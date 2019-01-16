@@ -29,6 +29,9 @@ public:
     // 37. Sudoku Solver
     void solveSudoku(vector<vector<char>> &board);
 
+    // 39. Combination Sum
+    vector<vector<int>> combinationSum(vector<int> &&candidates, int target);
+
 private:
     void
     letterCombinationsHelper(vector<string> &ans, const string digits, string res, int idx,
