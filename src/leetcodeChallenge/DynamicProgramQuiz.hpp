@@ -8,12 +8,18 @@
 #include "Utils.hpp"
 #include <string>
 
+using namespace std;
+
 class DynamicProgramQuiz {
 public:
     // 70. Climbing Stairs
     int climbStairs(int n);
 
-    int coinChange(std::vector<int>& coins, int amount);
+    // 322. Coin Change
+    int coinChange(std::vector<int> &&coins, int amount);
+
+private:
+    int coinChangeDFS(vector<int> &coins, int target, vector<int> &memo);
 };
 
 

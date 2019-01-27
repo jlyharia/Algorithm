@@ -16,3 +16,8 @@ TEST (DynamicProgram, Climbing_Stairs) {
     EXPECT_EQ(3, dp.climbStairs(3));
     EXPECT_EQ(8, dp.climbStairs(5));
 }
+
+TEST (DynamicProgram, Coin_Change) {
+    EXPECT_EQ(3, dp.coinChange({1, 2, 5}, 11));
+    EXPECT_EQ(-1, dp.coinChange({2}, 3));
+}

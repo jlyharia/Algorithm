@@ -31,6 +31,24 @@ int DynamicProgramQuiz::climbStairs(int n) {
     return second;
 }
 
-int DynamicProgramQuiz::coinChange(std::vector<int>& coins, int amount){
+/**
+ *
+ * http://www.cnblogs.com/grandyang/p/5138186.html
+ */
+int DynamicProgramQuiz::coinChange(std::vector<int> &&coins, int amount) {
+    vector<int> memo(amount + 1, INT_MAX);
+    memo[0] = 0;
+    return coinChangeDFS(coins, amount, memo);
+}
 
+int DynamicProgramQuiz::coinChangeDFS(vector<int> &coins, int target, vector<int> &memo) {
+    if (target < 0) return -1;
+    if (memo[target] != INT_MAX) return memo[target];
+    // cannot found any match from catch then continue
+    for (int i = 0; i < coins.size(); ++i) {
+        int tmp = coinChangeDFS(coins, target - coins[i], memo);
+        // none of memo will not be set to -1 here
+        if (tmp >= 0) memo[target] = min(memo[target], tmp + 1);
+    }
+    return memo[target] = (memo[target] == INT_MAX) ? -1 : memo[target];
 }
