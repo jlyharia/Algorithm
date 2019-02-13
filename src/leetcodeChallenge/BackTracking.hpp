@@ -42,6 +42,8 @@ private:
     bool solveSudokuHelper(vector<vector<char>> &board, int i, int j);
 
     bool isValidSudokuNumber(vector<vector<char>> &board, int x, int y);
+
+    void combinationSumDFS(vector<int> &candidates, int target, int start, vector<int> out, vector<vector<int>> &res);
 };
 
 

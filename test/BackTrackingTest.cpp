@@ -103,7 +103,20 @@ TEST (BackTracking, Sudoku_Solver) {
 }
 
 TEST (BackTracking, Combination_Sum) {
-    vector<vector<int>> ans = bt.combinationSum({2, 3, 6, 7}, 7);
+    {
+        vector<vector<int>> ans = bt.combinationSum({2, 3, 6, 7}, 7);
 
-    bt.combinationSum({2, 3, 5}, 8);
+        vector<vector<int>> ch = {{2, 2, 3},
+                                  {7}};
+        EXPECT_EQ(ch, ans);
+    }
+    {
+        vector<vector<int>> ans = bt.combinationSum({2, 3, 5}, 8);
+        vector<vector<int>> ch = {
+                {2, 2, 2, 2},
+                {2, 3, 3},
+                {3, 5}
+        };
+        EXPECT_EQ(ch, ans);
+    }
 }
