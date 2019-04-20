@@ -120,3 +120,29 @@ TEST (BackTracking, Combination_Sum) {
         EXPECT_EQ(ch, ans);
     }
 }
+
+TEST(BackTracking, Subsets) {
+    auto ans = bt.subsets({1, 2, 3});
+    print(move(ans));
+}
+
+TEST (BackTracking, Permutations) {
+//    bt.permute();
+}
+
+TEST (BackTracking, Permutations_II) {
+    vector<vector<int>> ans = bt.permuteUnique({1, 1, 2});
+
+    vector<vector<int>> exp = {
+            {
+                    1, 1, 2
+            },
+            {
+                    1, 2, 1
+            },
+            {
+                    2, 1, 1
+            }
+    };
+    EXPECT_EQ(exp, ans);
+}

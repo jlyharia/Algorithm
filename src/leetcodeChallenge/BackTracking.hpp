@@ -32,6 +32,15 @@ public:
     // 39. Combination Sum
     vector<vector<int>> combinationSum(vector<int> &&candidates, int target);
 
+    // 46. Permutations
+    vector<vector<int>> permute(vector<int> &nums);
+
+    // 78. Subsets
+    vector<vector<int>> subsets(vector<int> &&nums);
+
+    // 47. Permutations II
+    vector<vector<int>> permuteUnique(vector<int> &&nums);
+
 private:
     void
     letterCombinationsHelper(vector<string> &ans, const string digits, string res, int idx,
@@ -44,6 +53,9 @@ private:
     bool isValidSudokuNumber(vector<vector<char>> &board, int x, int y);
 
     void combinationSumDFS(vector<int> &candidates, int target, int start, vector<int> out, vector<vector<int>> &res);
+
+    void
+    permuteUniqueDFS(vector<int> &nums, int level, vector<int> &visited, vector<int> &out, vector<vector<int>> &res);
 };
 
 
