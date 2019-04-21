@@ -122,8 +122,14 @@ TEST (BackTracking, Combination_Sum) {
 }
 
 TEST(BackTracking, Subsets) {
-    auto ans = bt.subsets({1, 2, 3});
-    print(move(ans));
+    vector<vector<int>> ans = bt.subsets({1, 2, 3});
+//    print(ans);
+    for (auto row: ans) {
+        for (auto c:row) {
+            cout << c << " ";
+        }
+        cout << endl;
+    }
 }
 
 TEST (BackTracking, Permutations) {

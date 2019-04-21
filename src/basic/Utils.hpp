@@ -26,7 +26,25 @@ void print(std::vector<T> &&vec) {
 }
 
 template<class T>
+void print(std::vector<T> &vec) {
+    for (auto &&i:vec) {
+        std::cout << i << '\t';
+    }
+    std::cout << '\n';
+}
+
+template<class T>
 void print(std::vector<std::vector<T>> &&vec) {
+    for (auto &&i:vec) {
+        for (auto &&j:i) {
+            std::cout << j << '\t';
+        }
+        std::cout << '\n';
+    }
+}
+
+template<class T>
+void print(std::vector<std::vector<T>> &vec) {
     for (auto &&i:vec) {
         for (auto &&j:i) {
             std::cout << j << '\t';
@@ -39,4 +57,5 @@ void printListNode(ListNode *ln);
 
 
 void printLevel(int lv);
+
 #endif //ALGORITHM_UTILS_HPP

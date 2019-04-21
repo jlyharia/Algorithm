@@ -190,7 +190,22 @@ void BackTracking::combinationSumDFS(vector<int> &candidates, int target, int st
 }
 
 vector<vector<int>> BackTracking::subsets(vector<int> &&nums) {
+    vector<vector<int>> ans;
+    vector<int> out;
+    std::sort(nums.begin(), nums.end());
+    dfsSubsets(nums, 0, out, ans);
+    return ans;
+}
 
+void BackTracking::dfsSubsets(vector<int> &nums, int pos, vector<int> &out, vector<vector<int>> &ans) {
+    if (pos == nums.size()) {
+        ans.push_back(out);
+    } else {
+        out.push_back(nums[pos]);
+        dfsSubsets(nums, pos + 1, out, ans);
+        out.pop_back();
+        dfsSubsets(nums, pos + 1, out, ans);
+    }
 }
 
 vector<vector<int>> BackTracking::permute(vector<int> &nums) {

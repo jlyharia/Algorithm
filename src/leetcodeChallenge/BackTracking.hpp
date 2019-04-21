@@ -56,6 +56,8 @@ private:
 
     void
     permuteUniqueDFS(vector<int> &nums, int level, vector<int> &visited, vector<int> &out, vector<vector<int>> &res);
+
+    void dfsSubsets(vector<int> &nums, int pos, vector<int> &out, vector<vector<int>> &ans);
 };
 
 
