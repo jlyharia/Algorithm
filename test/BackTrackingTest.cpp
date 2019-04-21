@@ -152,3 +152,22 @@ TEST (BackTracking, Permutations_II) {
     };
     EXPECT_EQ(exp, ans);
 }
+
+TEST(BackTracking, Combination_Sum_II) {
+    vector<vector<int>> ans = bt.combinationSum2({10, 1, 2, 7, 6, 1, 5}, 8);
+    vector<vector<int>> exp = {
+            {
+                    1, 1, 6
+            },
+            {
+                    1, 2, 5
+            },
+            {
+                    1, 7
+            },
+            {
+                    2, 6
+            }
+    };
+    EXPECT_EQ(exp, ans);
+}

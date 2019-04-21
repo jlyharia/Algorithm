@@ -240,3 +240,31 @@ void BackTracking::permuteUniqueDFS(vector<int> &nums, int level, vector<int> &v
         visited[i] = 0;
     }
 }
+
+vector<vector<int>> BackTracking::combinationSum2(vector<int> &&candidates, int target) {
+    vector<int> out;
+    vector<vector<int>> ans;
+    std::sort(candidates.begin(), candidates.end());
+    combinationSum2DFS(candidates, target, 0, out, ans);
+    return ans;
+}
+
+void BackTracking::combinationSum2DFS(vector<int> &candidates, int target, int pos, vector<int> &out,
+                                      vector<vector<int>> &ans) {
+    if (target == 0) {
+        ans.push_back(out);
+    } else {
+        for (int i = pos; i < candidates.size(); i++) {
+            int temp = target - candidates[i];
+            if (temp < 0) {
+                break;
+            }
+            if (i > pos && candidates[i - 1] == candidates[i]) {
+                continue;
+            }
+            out.push_back(candidates[i]);
+            combinationSum2DFS(candidates, temp, i + 1, out, ans);
+            out.pop_back();
+        }
+    }
+}

@@ -32,14 +32,18 @@ public:
     // 39. Combination Sum
     vector<vector<int>> combinationSum(vector<int> &&candidates, int target);
 
+    // 40. Combination Sum II
+    vector<vector<int>> combinationSum2(vector<int> &&candidates, int target);
+
     // 46. Permutations
     vector<vector<int>> permute(vector<int> &nums);
+
+    // 47. Permutations II
+    vector<vector<int>> permuteUnique(vector<int> &&nums);
 
     // 78. Subsets
     vector<vector<int>> subsets(vector<int> &&nums);
 
-    // 47. Permutations II
-    vector<vector<int>> permuteUnique(vector<int> &&nums);
 
 private:
     void
@@ -58,6 +62,9 @@ private:
     permuteUniqueDFS(vector<int> &nums, int level, vector<int> &visited, vector<int> &out, vector<vector<int>> &res);
 
     void dfsSubsets(vector<int> &nums, int pos, vector<int> &out, vector<vector<int>> &ans);
+
+    void combinationSum2DFS(vector<int> &candidates, int target, int pos, vector<int> &out,
+                            vector<vector<int>> &ans);
 };
 
 
