@@ -171,3 +171,16 @@ TEST(BackTracking, Combination_Sum_II) {
     };
     EXPECT_EQ(exp, ans);
 }
+
+TEST(BackTracking, Combination_Sum_III) {
+    bt.combinationSum3(3, 7);
+}
+
+TEST(BackTracking, Subsets_II) {
+
+    vector<vector<int>> ans = bt.subsetsWithDup({1, 2, 2});
+
+    print(ans);
+
+    cout<<ans.size()<<endl;
+}

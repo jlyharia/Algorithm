@@ -16,11 +16,11 @@ using namespace std;
 
 class ArrayQuiz {
 public:
-    //1. Two Sum
+    // 1. Two Sum
     vector<int> twoSum(vector<int> &&nums, int target);
 
 
-    //3. Longest Substring Without Repeating Characters
+    // 3. Longest Substring Without Repeating Characters
     int lengthOfLongestSubstring(std::string s);
 
     // 4. Median of Two Sorted Arrays
@@ -52,6 +52,9 @@ public:
 
     // 35. Search Insert Position
     int searchInsert(vector<int> &&nums, int target);
+
+    // 41. First Missing Positive
+    int firstMissingPositive(vector<int> &&nums);
 
     // 75. Sort Colors
     void sortColors(vector<int> &nums);

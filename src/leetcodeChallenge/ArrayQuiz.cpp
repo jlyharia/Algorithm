@@ -293,3 +293,7 @@ void ArrayQuiz::sortColors(vector<int> &nums) {
         }
     }
 }
+
+int ArrayQuiz::firstMissingPositive(vector<int> &&nums) {
+
+}

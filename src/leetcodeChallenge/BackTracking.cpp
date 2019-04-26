@@ -176,16 +176,19 @@ vector<vector<int>> BackTracking::combinationSum(vector<int> &&candidates, int t
 }
 
 void BackTracking::combinationSumDFS(vector<int> &candidates, int target, int start, vector<int> out,
-                                     vector<vector<int>> &res) {
-    if (target < 0) return;
+                                     vector<vector<int>> &ans) {
     if (target == 0) {
-        res.push_back(out);
-        return;
-    }
-    for (int i = start; i < candidates.size(); ++i) {
-        out.push_back(candidates[i]);
-        combinationSumDFS(candidates, target - candidates[i], i, out, res);
-        out.pop_back();
+        ans.push_back(out);
+    } else {
+        for (int i = start; i < candidates.size(); i++) {
+            int temp = target - candidates[i];
+            if (temp < 0) {
+                break;
+            }
+            out.push_back(candidates[i]);
+            combinationSumDFS(candidates, temp, i, out, ans);
+            out.pop_back();
+        }
     }
 }
 
@@ -267,4 +270,33 @@ void BackTracking::combinationSum2DFS(vector<int> &candidates, int target, int p
             out.pop_back();
         }
     }
+}
+
+vector<vector<int>> BackTracking::subsetsWithDup(vector<int> &&nums) {
+    vector<bool> visit(nums.size(), false);
+    vector<int> out;
+    vector<vector<int>> ans;
+    std::sort(nums.begin(), nums.end());
+    dfsSubsetsWithDup(nums, 0, visit, out, ans);
+    return ans;
+}
+
+void BackTracking::dfsSubsetsWithDup(vector<int> &nums, int pos, vector<bool> &visit, vector<int> &out,
+                                     vector<vector<int>> &ans) {
+    if (pos == nums.size()) {
+        ans.push_back(out);
+    } else {
+        if (!(pos > 0 && nums[pos] == nums[pos - 1] && !visit[pos - 1])) {
+            visit[pos] = true;
+            out.push_back(nums[pos]);
+            dfsSubsetsWithDup(nums, pos + 1, visit, out, ans);
+            out.pop_back();
+            visit[pos] = false;
+        }
+        dfsSubsetsWithDup(nums, pos + 1, visit, out, ans);
+    }
+}
+
+vector<vector<int>> BackTracking::combinationSum3(int k, int n) {
+
 }

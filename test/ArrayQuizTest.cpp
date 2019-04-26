@@ -134,3 +134,11 @@ TEST (ArrayTest, Sort_Colors) {
         EXPECT_EQ(ans, nums);
     }
 }
+
+TEST (ArrayTest, First_Missing_Positive) {
+    EXPECT_EQ(3, aq.firstMissingPositive({1, 2, 0}));
+
+    EXPECT_EQ(2, aq.firstMissingPositive({3, 4, -1, 1}));
+
+    EXPECT_EQ(1, aq.firstMissingPositive({7, 8, 9, 11, 12}));
+}

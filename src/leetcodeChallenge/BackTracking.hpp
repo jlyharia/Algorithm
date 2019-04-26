@@ -41,8 +41,14 @@ public:
     // 47. Permutations II
     vector<vector<int>> permuteUnique(vector<int> &&nums);
 
+    // 216. Combination Sum III
+    vector<vector<int>> combinationSum3(int k, int n);
+
     // 78. Subsets
     vector<vector<int>> subsets(vector<int> &&nums);
+
+    // 90. Subsets II
+    vector<vector<int>> subsetsWithDup(vector<int> &&nums);
 
 
 private:
@@ -56,7 +62,7 @@ private:
 
     bool isValidSudokuNumber(vector<vector<char>> &board, int x, int y);
 
-    void combinationSumDFS(vector<int> &candidates, int target, int start, vector<int> out, vector<vector<int>> &res);
+    void combinationSumDFS(vector<int> &candidates, int target, int start, vector<int> out, vector<vector<int>> &ans);
 
     void
     permuteUniqueDFS(vector<int> &nums, int level, vector<int> &visited, vector<int> &out, vector<vector<int>> &res);
@@ -65,6 +71,10 @@ private:
 
     void combinationSum2DFS(vector<int> &candidates, int target, int pos, vector<int> &out,
                             vector<vector<int>> &ans);
+
+    void dfsSubsetsWithDup(vector<int> &nums, int pos, vector<bool> &visit, vector<int> &out,
+                           vector<vector<int>> &ans);
+
 };
 
 
