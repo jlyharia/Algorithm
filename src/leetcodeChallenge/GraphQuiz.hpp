@@ -16,8 +16,13 @@ public:
     // 207. Course Schedule
     bool canFinish(int numCourses, vector<vector<int>> &prerequisites);
 
+    // 210. Course Schedule II
+    vector<int> findOrder(int numCourses, vector<vector<int>> &prerequisites);
+
     // 269. Alien Dictionary
     string alienOrder(vector<string> &words);
+
+
 };
 
 

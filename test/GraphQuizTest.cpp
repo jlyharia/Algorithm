@@ -30,3 +30,13 @@ TEST (GraphTest, Course_Schedule) {
     EXPECT_FALSE(gq.canFinish(2, pre2));
 }
 
+TEST (GraphTest, Course_Schedule_II) {
+    vector<vector<int>> pre0 = {{1, 0},
+                                {2, 0},
+                                {3, 1},
+                                {3, 2}};
+
+    vector<int> ans = gq.findOrder(4, pre0);
+    vector<int> act{0, 1, 2, 3};
+    EXPECT_EQ(act, ans);
+}
