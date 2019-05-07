@@ -21,6 +21,7 @@ ADD_TEST_CASE(BackTrackingTest)
 ADD_TEST_CASE(DynamicProgramTest)
 ADD_TEST_CASE(StringQuizTest)
 ADD_TEST_CASE(MathQuizTest)
+ADD_TEST_CASE(GraphQuizTest)
 
 
 add_test(NAME testName
