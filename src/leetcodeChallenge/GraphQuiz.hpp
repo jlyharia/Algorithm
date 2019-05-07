@@ -22,6 +22,8 @@ public:
     // 269. Alien Dictionary
     string alienOrder(vector<string> &words);
 
+    // 630. Course Schedule III
+    int scheduleCourse(vector<vector<int>>& courses);
 
 };
 

@@ -72,3 +72,18 @@ vector<int> GraphQuiz::findOrder(int numCourses, vector<vector<int>> &prerequisi
     if (res.size() != numCourses) res.clear();
     return res;
 }
+
+int GraphQuiz::scheduleCourse(vector<vector<int>> &courses) {
+    std::sort(courses.begin(), courses.end(), [](vector<int> &a, vector<int> &b) { return a[1] < b[1]; });
+    int curTime = 0;
+    priority_queue<int> q;
+    for (auto course : courses) {
+        curTime += course[0];
+        q.push(course[0]);
+        if (curTime > course[1]) {
+            curTime -= q.top();
+            q.pop();
+        }
+    }
+    return q.size();
+}
