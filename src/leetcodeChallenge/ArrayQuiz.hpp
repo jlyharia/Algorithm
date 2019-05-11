@@ -59,6 +59,10 @@ public:
     // 75. Sort Colors
     void sortColors(vector<int> &nums);
 
+    // 238. Product of Array Except Self
+    vector<int> productExceptSelf(vector<int> &&nums);
+
+
 private:
     int searchRangeHelper(const vector<int> &nums, const int &target, bool isLeft);
 };

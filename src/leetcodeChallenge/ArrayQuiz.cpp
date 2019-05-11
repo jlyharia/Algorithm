@@ -297,3 +297,18 @@ void ArrayQuiz::sortColors(vector<int> &nums) {
 int ArrayQuiz::firstMissingPositive(vector<int> &&nums) {
 
 }
+
+vector<int> ArrayQuiz::productExceptSelf(vector<int> &&nums) {
+    vector<int> res(nums.size(), 1);
+
+    for (int i = 1; i < nums.size(); i++) {
+        res[i] = res[i - 1] * nums[i - 1];
+    }
+
+    int ac = 1;
+    for (int j = nums.size() - 1; j >= 0; j--) {
+        res[j] *= ac;
+        ac *= nums[j];
+    }
+    return res;
+}

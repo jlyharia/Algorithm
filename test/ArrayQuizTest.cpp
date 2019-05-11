@@ -142,3 +142,12 @@ TEST (ArrayTest, First_Missing_Positive) {
 
     EXPECT_EQ(1, aq.firstMissingPositive({7, 8, 9, 11, 12}));
 }
+
+TEST (ArrayTest, Product_of_Array_Except_Self) {
+
+    vector<int> ans = {24,
+                       12,
+                       8,
+                       6};
+    EXPECT_EQ(ans, aq.productExceptSelf({1, 2, 3, 4}));
+}
