@@ -11,7 +11,22 @@ using namespace std;
 GraphQuiz gq;
 
 TEST (GraphTest, Alien_Dictionary) {
-//    gq.alienOrder();
+    vector<string> words = {"wrt",
+                            "wrf",
+                            "er",
+                            "ett",
+                            "rftt"};
+
+    string ans = gq.alienOrder(words);
+    EXPECT_EQ("wertf", ans);
+
+
+    vector<string> words1 = {"z",
+                             "x",
+                             "z"};
+
+    string ans1 = gq.alienOrder(words1);
+    EXPECT_EQ("", ans1);
 }
 
 TEST (GraphTest, Course_Schedule) {
