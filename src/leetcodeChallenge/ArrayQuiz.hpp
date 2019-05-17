@@ -56,8 +56,14 @@ public:
     // 41. First Missing Positive
     int firstMissingPositive(vector<int> &&nums);
 
+    // 53. Maximum Subarray
+    int maxSubArray(vector<int>&& nums);
+
     // 75. Sort Colors
     void sortColors(vector<int> &nums);
+
+    // 121. Best Time to Buy and Sell Stock
+    int maxProfit(vector<int>&& prices);
 
     // 238. Product of Array Except Self
     vector<int> productExceptSelf(vector<int> &&nums);

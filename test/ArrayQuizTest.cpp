@@ -151,3 +151,16 @@ TEST (ArrayTest, Product_of_Array_Except_Self) {
                        6};
     EXPECT_EQ(ans, aq.productExceptSelf({1, 2, 3, 4}));
 }
+
+TEST (ArrayTest, Best_Time_to_Buy_and_Sell_Stock) {
+    EXPECT_EQ(5, aq.maxProfit({7, 1, 5, 3, 6, 4}));
+
+    EXPECT_EQ(0, aq.maxProfit({7, 6, 4, 3, 1}));
+
+    EXPECT_EQ(3, aq.maxProfit({2, 1, 4}));
+}
+
+TEST (ArrayTest, Maximum_Subarray) {
+    EXPECT_EQ(6, aq.maxSubArray({-2, 1, -3, 4, -1, 2, 1, -5, 4}));
+
+}

@@ -312,3 +312,21 @@ vector<int> ArrayQuiz::productExceptSelf(vector<int> &&nums) {
     }
     return res;
 }
+
+int ArrayQuiz::maxProfit(vector<int> &&prices) {
+    int res = 0, buy = INT_MAX;
+    for (int price : prices) {
+        buy = min(buy, price);
+        res = max(res, price - buy);
+    }
+    return res;
+}
+
+int ArrayQuiz::maxSubArray(vector<int> &&nums) {
+    int res = INT_MIN, curSum = 0;
+    for (int num : nums) {
+        curSum = max(curSum + num, num);
+        res = max(res, curSum);
+    }
+    return res;
+}
