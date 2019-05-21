@@ -182,5 +182,15 @@ TEST(BackTracking, Subsets_II) {
 
     print(ans);
 
-    cout<<ans.size()<<endl;
+    cout << ans.size() << endl;
+}
+
+TEST(BackTracking, Number_of_Islands) {
+    vector<vector<char>> grid = {
+            {'1', '1', '1', '1', '0'},
+            {'1', '1', '0', '1', '0'},
+            {'1', '1', '0', '0', '0'},
+            {'0', '0', '0', '0', '0'}
+    };
+    EXPECT_EQ(1, bt.numIslands(grid));
 }

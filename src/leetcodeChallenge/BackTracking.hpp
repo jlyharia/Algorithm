@@ -41,14 +41,17 @@ public:
     // 47. Permutations II
     vector<vector<int>> permuteUnique(vector<int> &&nums);
 
-    // 216. Combination Sum III
-    vector<vector<int>> combinationSum3(int k, int n);
-
     // 78. Subsets
     vector<vector<int>> subsets(vector<int> &&nums);
 
     // 90. Subsets II
     vector<vector<int>> subsetsWithDup(vector<int> &&nums);
+
+    // 200. Number of Islands
+    int numIslands(vector<vector<char>>& grid);
+
+    // 216. Combination Sum III
+    vector<vector<int>> combinationSum3(int k, int n);
 
 
 private:
