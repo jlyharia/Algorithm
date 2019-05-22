@@ -3,13 +3,13 @@ cmake_minimum_required(VERSION 3.9)
 project(Algorithm)
 # Enable debug symbols by default
 if (CMAKE_BUILD_TYPE STREQUAL "")
-	set(CMAKE_BUILD_TYPE Debug)
+    set(CMAKE_BUILD_TYPE Debug)
 endif ()
 
 # ============ main ===================
 # system check
 IF (${CMAKE_SYSTEM_NAME} MATCHES "Darwin") # check apple
-	message("-- CMake is running on OS X")
+    message("-- CMake is running on OS X")
 endif ()
 
 message("-- Generator is " ${CMAKE_GENERATOR})
@@ -21,7 +21,7 @@ include(CheckCXXCompilerFlag)
 CHECK_CXX_COMPILER_FLAG("-std=c++17" COMPILER_SUPPORTS_CXX17)
 
 if (!COMPILER_SUPPORTS_CXX17 AND !COMPILER_SUPPORTS_CXX0X)
-	message(STATUS "The compiler ${CMAKE_CXX_COMPILER} has no C++17 support. Please use a different C++ compiler.")
+    message(STATUS "The compiler ${CMAKE_CXX_COMPILER} has no C++17 support. Please use a different C++ compiler.")
 endif ()
 
 message("-- CMAKE_CXX_COMPILER_ID = " ${CMAKE_CXX_COMPILER_ID})
@@ -37,19 +37,21 @@ SET(EXECUTABLE_OUTPUT_PATH ${PROJECT_BINARY_DIR})
 message("-- CMAKE_SOURCE_DIR = " ${CMAKE_SOURCE_DIR})
 
 set(HEADER_FILES
-		${HEADER_FILES}
-		${CMAKE_SOURCE_DIR}/src/leetcodeChallenge/ArrayQuiz.hpp
-		${CMAKE_SOURCE_DIR}/src/basic/Utils.hpp
-		${CMAKE_SOURCE_DIR}/src/leetcodeChallenge/LinkedListQuiz.hpp
-		${CMAKE_SOURCE_DIR}/src/leetcodeChallenge/BackTracking.hpp
-		${CMAKE_SOURCE_DIR}/src/leetcodeChallenge/DynamicProgramQuiz.hpp
-		${CMAKE_SOURCE_DIR}/src/leetcodeChallenge/StringQuiz.hpp
-		${CMAKE_SOURCE_DIR}/src/leetcodeChallenge/MathQuiz.hpp src/leetcodeChallenge/GraphQuiz.cpp src/leetcodeChallenge/GraphQuiz.hpp)
+        ${HEADER_FILES}
+        ${CMAKE_SOURCE_DIR}/src/leetcodeChallenge/ArrayQuiz.hpp
+        ${CMAKE_SOURCE_DIR}/src/basic/Utils.hpp
+        ${CMAKE_SOURCE_DIR}/src/leetcodeChallenge/LinkedListQuiz.hpp
+        ${CMAKE_SOURCE_DIR}/src/leetcodeChallenge/BackTracking.hpp
+        ${CMAKE_SOURCE_DIR}/src/leetcodeChallenge/DynamicProgramQuiz.hpp
+        ${CMAKE_SOURCE_DIR}/src/leetcodeChallenge/StringQuiz.hpp
+        ${CMAKE_SOURCE_DIR}/src/leetcodeChallenge/MathQuiz.hpp
+        ${CMAKE_SOURCE_DIR}/src/leetcodeChallenge/GraphQuiz.hpp
+        ${CMAKE_SOURCE_DIR}/src/leetcodeChallenge/LRUCache.hpp)
 # include headers
 include_directories(${CMAKE_SOURCE_DIR}/src/Interview
-		${CMAKE_SOURCE_DIR}/src/include
-		${CMAKE_SOURCE_DIR}/src/basic
-		${CMAKE_SOURCE_DIR}/src/leetcodeChallenge)
+        ${CMAKE_SOURCE_DIR}/src/include
+        ${CMAKE_SOURCE_DIR}/src/basic
+        ${CMAKE_SOURCE_DIR}/src/leetcodeChallenge)
 
 # include source files
 AUX_SOURCE_DIRECTORY(${CMAKE_SOURCE_DIR}/src/Interview SOURCE_FILES)

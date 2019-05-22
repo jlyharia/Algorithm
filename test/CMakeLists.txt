@@ -22,6 +22,7 @@ ADD_TEST_CASE(DynamicProgramTest)
 ADD_TEST_CASE(StringQuizTest)
 ADD_TEST_CASE(MathQuizTest)
 ADD_TEST_CASE(GraphQuizTest)
+ADD_TEST_CASE(LRUCacheQuizTest)
 
 
 add_test(NAME testName
