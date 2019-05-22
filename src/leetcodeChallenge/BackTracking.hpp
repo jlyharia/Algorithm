@@ -48,7 +48,7 @@ public:
     vector<vector<int>> subsetsWithDup(vector<int> &&nums);
 
     // 200. Number of Islands
-    int numIslands(vector<vector<char>>& grid);
+    int numIslands(vector<vector<char>> &grid);
 
     // 216. Combination Sum III
     vector<vector<int>> combinationSum3(int k, int n);
@@ -78,6 +78,7 @@ private:
     void dfsSubsetsWithDup(vector<int> &nums, int pos, vector<bool> &visit, vector<int> &out,
                            vector<vector<int>> &ans);
 
+    void numIslandsDfs(vector<vector<char>> &grid, vector<vector<bool>> &visited, int x, int y);
 };
 
 

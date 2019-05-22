@@ -193,4 +193,13 @@ TEST(BackTracking, Number_of_Islands) {
             {'0', '0', '0', '0', '0'}
     };
     EXPECT_EQ(1, bt.numIslands(grid));
+
+    vector<vector<char>> grid2 = {
+            {'1', '1', '1', '1', '1', '1'},
+            {'1', '0', '0', '0', '0', '1'},
+            {'1', '0', '1', '1', '0', '1'},
+            {'1', '0', '0', '0', '0', '1'},
+            {'1', '1', '1', '1', '1', '1'}};
+
+    EXPECT_EQ(2, bt.numIslands(grid2));
 }

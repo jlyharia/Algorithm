@@ -302,5 +302,27 @@ vector<vector<int>> BackTracking::combinationSum3(int k, int n) {
 }
 
 int BackTracking::numIslands(vector<vector<char>> &grid) {
+    if (grid.empty() || grid[0].empty()) return 0;
+    vector<vector<bool>> visited(grid.size(), vector<bool>(grid[0].size(), false));
+    int num = 0;
+    for (int i = 0; i < grid.size(); i++) {
+        for (int j = 0; j < grid[i].size(); j++) {
+            if (grid[i][j] == '1' && !visited[i][j]) {
+                numIslandsDfs(grid, visited, i, j);
+                num++;
+            }
+        }
+    }
+    return num;
+}
 
+void BackTracking::numIslandsDfs(vector<vector<char>> &grid, vector<vector<bool>> &visited, int x, int y) {
+    if (x < 0 || y < 0 || x >= grid.size() || y >= grid[0].size() || visited[x][y] || grid[x][y] == '0') {
+        return;
+    }
+    visited[x][y] = true;
+    numIslandsDfs(grid, visited, x + 1, y);
+    numIslandsDfs(grid, visited, x - 1, y);
+    numIslandsDfs(grid, visited, x, y + 1);
+    numIslandsDfs(grid, visited, x, y - 1);
 }
