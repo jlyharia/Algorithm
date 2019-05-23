@@ -6,6 +6,9 @@
 #define ALGORITHM_LRUCACHE_HPP
 
 
+#include <list>
+#include <unordered_map>
+
 using namespace std;
 
 /**
@@ -24,6 +27,9 @@ public:
     void put(int key, int value);
 
 private:
+    int cap;
+    list<pair<int, int>> queue;
+    unordered_map<int, list<pair<int, int>>::iterator> map;
 };
 
 
