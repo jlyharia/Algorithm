@@ -23,6 +23,7 @@ ADD_TEST_CASE(StringQuizTest)
 ADD_TEST_CASE(MathQuizTest)
 ADD_TEST_CASE(GraphQuizTest)
 ADD_TEST_CASE(LRUCacheQuizTest)
+ADD_TEST_CASE(SortingTest)
 
 
 add_test(NAME testName

@@ -57,16 +57,19 @@ public:
     int firstMissingPositive(vector<int> &&nums);
 
     // 53. Maximum Subarray
-    int maxSubArray(vector<int>&& nums);
+    int maxSubArray(vector<int> &&nums);
 
     // 75. Sort Colors
     void sortColors(vector<int> &nums);
 
     // 121. Best Time to Buy and Sell Stock
-    int maxProfit(vector<int>&& prices);
+    int maxProfit(vector<int> &&prices);
 
     // 238. Product of Array Except Self
     vector<int> productExceptSelf(vector<int> &&nums);
+
+    // 973. K Closest Points to Origin
+    vector<vector<int>> kClosest(vector<vector<int>> &points, int K);
 
 
 private:

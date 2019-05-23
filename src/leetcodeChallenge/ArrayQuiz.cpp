@@ -330,3 +330,7 @@ int ArrayQuiz::maxSubArray(vector<int> &&nums) {
     }
     return res;
 }
+
+vector<vector<int>> ArrayQuiz::kClosest(vector<vector<int>>& points, int K){
+
+}

@@ -164,3 +164,6 @@ TEST (ArrayTest, Maximum_Subarray) {
     EXPECT_EQ(6, aq.maxSubArray({-2, 1, -3, 4, -1, 2, 1, -5, 4}));
 
 }
+
+973. K Closest Points to Origin
+        vector<vector<int>> kClosest(vector<vector<int>>& points, int K)
