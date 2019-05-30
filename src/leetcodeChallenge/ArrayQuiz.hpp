@@ -77,6 +77,8 @@ private:
 
     void quickSelect(vector<vector<int>> &points, int low, int high, int K);
 
+    void quickPartition(vector<vector<int>> &points, int low, int high);
+
     int dist(vector<int> point);
 };
 
