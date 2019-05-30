@@ -74,6 +74,10 @@ public:
 
 private:
     int searchRangeHelper(const vector<int> &nums, const int &target, bool isLeft);
+
+    void quickSelect(vector<vector<int>> &points, int low, int high, int K);
+
+    int dist(vector<int> point);
 };
 
 #endif /* ARRAYQUIZ_HPP_ */

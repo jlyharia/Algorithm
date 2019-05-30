@@ -165,5 +165,9 @@ TEST (ArrayTest, Maximum_Subarray) {
 
 }
 
-973. K Closest Points to Origin
-        vector<vector<int>> kClosest(vector<vector<int>>& points, int K)
+TEST (ArrayTest, K_Closest_Points_to_Origin) {
+    vector<vector<int>> points{{3,  3},
+                               {5,  -1},
+                               {-2, 4}};
+    aq.kClosest(points, 2);
+}

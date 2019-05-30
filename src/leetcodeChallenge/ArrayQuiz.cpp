@@ -331,6 +331,21 @@ int ArrayQuiz::maxSubArray(vector<int> &&nums) {
     return res;
 }
 
-vector<vector<int>> ArrayQuiz::kClosest(vector<vector<int>>& points, int K){
+vector<vector<int>> ArrayQuiz::kClosest(vector<vector<int>> &points, int K) {
 
+}
+
+void ArrayQuiz::quickSelect(vector<vector<int>> &points, int low, int high, int K) {
+    int pivot = dist(points[low]);
+    int i = low;
+    for (int j = low + 1; j <= high; j++) {
+        if (dist(points[j]) < pivot) {
+            std::swap(points[j], points[++i]);
+        }
+    }
+    std::swap(points[low], points[i]);
+}
+
+int ArrayQuiz::dist(vector<int> point) {
+    return point[0] * point[0] + point[1] * point[1];
 }
