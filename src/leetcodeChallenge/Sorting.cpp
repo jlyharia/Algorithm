@@ -28,3 +28,11 @@ int Sorting::quickSortPartition(std::vector<int> &vec, int low, int high) {
     std::swap(vec[low], vec[i]);
     return i;
 }
+
+void Sorting::kSmallest(std::vector<int> &vec, int k) {
+    return quickSort(vec, 0, vec.size());
+}
+
+void kSmallestSort(std::vector<int> &vec, int high, int low, int k){
+    
+}
