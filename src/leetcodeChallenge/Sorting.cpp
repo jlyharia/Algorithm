@@ -3,7 +3,7 @@
 //
 
 #include "Sorting.hpp"
-
+#include <random>
 
 void Sorting::quickSort(std::vector<int> &vec) {
     return quickSort(vec, 0, vec.size());
@@ -30,9 +30,24 @@ int Sorting::quickSortPartition(std::vector<int> &vec, int low, int high) {
 }
 
 void Sorting::kSmallest(std::vector<int> &vec, int k) {
-    return quickSort(vec, 0, vec.size());
+    kSmallestSort(vec, 0, vec.size(), k);
 }
 
-void kSmallestSort(std::vector<int> &vec, int high, int low, int k){
-    
+void Sorting::kSmallestSort(std::vector<int> &vec, int low, int high, int k) {
+//    std::random_device rd;  //Will be used to obtain a seed for the random number engine
+//    std::mt19937 gen(rd()); //Standard mersenne_twister_engine seeded with rd()
+//    std::uniform_int_distribution<> dis(low, high - 1);
+    int pivot = kSmallestPartition(vec, low, high);
+    int leftLength = k - pivot + 1;
+}
+
+int Sorting::kSmallestPartition(std::vector<int> &vec, int low, int high) {
+    int i = low;
+    for (int j = low + 1; j < high; j++) {
+        if (vec.at(low) > vec.at(j)) {
+            std::swap(vec.at(j), vec.at(++i));
+        }
+    }
+    std::swap(vec.at(low), vec.at(i));
+    return i;
 }

@@ -22,6 +22,5 @@ TEST (Sorting, quick_sort) {
 
 TEST (Sorting, quick_selection) {
     vector<int> vec{5, 9, 4, 7, 2, 6, 1, 3, 8};
-    sorting.kSmallest(vec, 4);
-    print(vec);
+    std::cout << sorting.kSmallestPartition(vec, 0, vec.size()) << std::endl;
 }
