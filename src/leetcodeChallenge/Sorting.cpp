@@ -38,7 +38,12 @@ void Sorting::kSmallestSort(std::vector<int> &vec, int low, int high, int k) {
 //    std::mt19937 gen(rd()); //Standard mersenne_twister_engine seeded with rd()
 //    std::uniform_int_distribution<> dis(low, high - 1);
     int pivot = kSmallestPartition(vec, low, high);
-    int leftLength = k - pivot + 1;
+    int leftLength = pivot - low + 1;
+    if (k > leftLength) {
+        kSmallestSort(vec, pivot + 1, high, k - leftLength);
+    } else if (k < leftLength) {
+        kSmallestSort(vec, low, pivot, k);
+    }
 }
 
 int Sorting::kSmallestPartition(std::vector<int> &vec, int low, int high) {

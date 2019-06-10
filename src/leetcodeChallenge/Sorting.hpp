@@ -15,12 +15,14 @@ public:
 
     int kSmallestPartition(std::vector<int> &vec, int low, int high);
 
+    void kSmallestSort(std::vector<int> &vec, int low, int high, int k);
+
 private:
     void quickSort(std::vector<int> &vec, int low, int high);
 
     int quickSortPartition(std::vector<int> &vec, int low, int high);
 
-    void kSmallestSort(std::vector<int> &vec, int low, int high, int k);
+//    void kSmallestSort(std::vector<int> &vec, int low, int high, int k);
 
 //    int kSmallestPartition(std::vector<int> &vec, int low, int high);
 };
