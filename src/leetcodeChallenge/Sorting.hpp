@@ -11,20 +11,16 @@ class Sorting {
 public:
     void quickSort(std::vector<int> &);
 
-    void kSmallest(std::vector<int> &vec, int k);
-
-    int kSmallestPartition(std::vector<int> &vec, int low, int high);
-
-    void kSmallestSort(std::vector<int> &vec, int low, int high, int k);
+    int kSmallest(std::vector<int> &vec, int k);
 
 private:
     void quickSort(std::vector<int> &vec, int low, int high);
 
     int quickSortPartition(std::vector<int> &vec, int low, int high);
 
-//    void kSmallestSort(std::vector<int> &vec, int low, int high, int k);
+    void kSmallestSort(std::vector<int> &vec, int low, int high, int k);
 
-//    int kSmallestPartition(std::vector<int> &vec, int low, int high);
+    int kSmallestPartition(std::vector<int> &vec, int low, int high);
 };
 
 

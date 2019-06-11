@@ -29,8 +29,9 @@ int Sorting::quickSortPartition(std::vector<int> &vec, int low, int high) {
     return i;
 }
 
-void Sorting::kSmallest(std::vector<int> &vec, int k) {
+int Sorting::kSmallest(std::vector<int> &vec, int k) {
     kSmallestSort(vec, 0, vec.size(), k);
+    return vec[k - 1];
 }
 
 void Sorting::kSmallestSort(std::vector<int> &vec, int low, int high, int k) {

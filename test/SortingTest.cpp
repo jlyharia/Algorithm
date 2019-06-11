@@ -22,6 +22,5 @@ TEST (Sorting, quick_sort) {
 
 TEST (Sorting, quick_selection) {
     vector<int> vec{5, 9, 4, 7, 2, 6, 1, 3, 8};
-    sorting.kSmallestSort(vec, 0, vec.size(), 7);
-    print(vec);
+    EXPECT_EQ(5, sorting.kSmallest(vec, 5));
 }
