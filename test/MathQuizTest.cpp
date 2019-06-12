@@ -4,6 +4,7 @@
 
 #include "gtest/gtest.h"
 #include <MathQuiz.hpp>
+#include <Utils.hpp>
 
 using namespace std;
 
@@ -43,7 +44,22 @@ TEST(MathQuiz, Divide_Two_Integers) {
 }
 
 TEST(MathQuiz, Pow_x_n) {
-
     EXPECT_EQ(1024.00000, (mt.myPow(2.00000, 10)));
+}
 
+TEST(MathQuiz, Sort_by_array) {
+    // https://leetcode.com/discuss/interview-question/309656/google-phone-screen
+    vector<int> A{24, 56, 74, -23, 87, 91};
+    vector<int> B{2, 3, 4, 1, 5, 6};
+    int i = 0;
+    while (i < A.size()) {
+        int pos = B[i] - 1;
+        if (pos != i) { // not the right position
+            std::swap(A[i], A[pos]);
+            std::swap(B[i], B[pos]);
+        } else // otherwise, skip
+            i++;
+    }
+    vector<int> expect{1, 2, 3, 4, 5, 6};
+    EXPECT_EQ(expect, B);
 }
