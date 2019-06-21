@@ -7,6 +7,7 @@
 
 #include <Utils.hpp>
 #include "ArrayQuiz.hpp"
+#include <stack>
 
 vector<int> ArrayQuiz::twoSum(vector<int> &&nums, int target) {
     vector<int> result;
@@ -39,6 +40,12 @@ int ArrayQuiz::lengthOfLongestSubstring(std::string s) {
     return maxLen;
 }
 
+/**
+ *
+ * https://www.cnblogs.com/grandyang/p/4465932.html
+ * https://leetcode.com/problems/median-of-two-sorted-arrays/discuss/2471/very-concise-ologminmn-iterative-solution-with-detailed-explanation
+ * https://www.youtube.com/watch?v=LPFhl65R7ww&t=1013s
+ */
 double ArrayQuiz::findMedianSortedArrays(vector<int> &&nums1, vector<int> &&nums2) {
     int m = nums1.size();
     int n = nums2.size();
@@ -331,25 +338,48 @@ int ArrayQuiz::maxSubArray(vector<int> &&nums) {
     return res;
 }
 
-vector<vector<int>> ArrayQuiz::kClosest(vector<vector<int>> &points, int K) {
-    quickSelect(points, 0, points.size(), K);
-}
+//vector<vector<int>> ArrayQuiz::kClosest(vector<vector<int>> &points, int K) {
+//    kClosestSort(points, 0, points.size(), K);
+//}
 
-void ArrayQuiz::quickSelect(vector<vector<int>> &points, int low, int high, int K) {
+//void ArrayQuiz::kClosestSort(vector<vector<int>> &points, int low, int high, int K) {
+//    int pivot = kClosestPartition(points, low, high);
+//    int leftLength = pivot - low + 1;
+//    if (K > leftLength) {
+//        kClosestSort(points, pivot + 1, high, K - leftLength);
+//    } else if (K < leftLength) {
+//        kClosestSort(points, low, pivot, K);
+//    }
+//}
 
-}
+//int ArrayQuiz::kClosestPartition(vector<vector<int>> &points, int low, int high) {
+//    int i = low;
+//    for (int j = low + 1; j < high; j++) {
+//        if (vec.at(low) > vec.at(j)) {
+//            std::swap(vec.at(j), vec.at(++i));
+//        }
+//    }
+//    std::swap(vec.at(low), vec.at(i));
+//    return i;
+//}
+//
+//int ArrayQuiz::dist(vector<int> point) {
+//    return point[0] * point[0] + point[1] * point[1];
+//}
 
-void ArrayQuiz::quickPartition(vector<vector<int>> &points, int low, int high) {
-    int pivot = dist(points[low]);
-    int i = low;
-    for (int j = low + 1; j < high; j++) {
-        if (dist(points[j]) < pivot) {
-            std::swap(points[j], points[++i]);
+
+int ArrayQuiz::trap(vector<int> &&height) {
+    stack<int> st;
+    int i = 0, res = 0, n = height.size();
+    while (i < n) {
+        if (st.empty() || height[i] <= height[st.top()]) {
+            st.push(i++);
+        } else {
+            int t = st.top();
+            st.pop();
+            if (st.empty()) continue;
+            res += (min(height[i], height[st.top()]) - height[t]) * (i - st.top() - 1);
         }
     }
-    std::swap(points[low], points[i]);
-}
-
-int ArrayQuiz::dist(vector<int> point) {
-    return point[0] * point[0] + point[1] * point[1];
+    return res;
 }

@@ -56,6 +56,9 @@ public:
     // 41. First Missing Positive
     int firstMissingPositive(vector<int> &&nums);
 
+    // 42. Trapping Rain Water
+    int trap(vector<int> &&height);
+
     // 53. Maximum Subarray
     int maxSubArray(vector<int> &&nums);
 
@@ -75,9 +78,9 @@ public:
 private:
     int searchRangeHelper(const vector<int> &nums, const int &target, bool isLeft);
 
-    void quickSelect(vector<vector<int>> &points, int low, int high, int K);
+    void kClosestSort(vector<vector<int>> &points, int low, int high, int K);
 
-    void quickPartition(vector<vector<int>> &points, int low, int high);
+    int kClosestPartition(vector<vector<int>> &points, int low, int high);
 
     int dist(vector<int> point);
 };

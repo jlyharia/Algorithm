@@ -162,12 +162,15 @@ TEST (ArrayTest, Best_Time_to_Buy_and_Sell_Stock) {
 
 TEST (ArrayTest, Maximum_Subarray) {
     EXPECT_EQ(6, aq.maxSubArray({-2, 1, -3, 4, -1, 2, 1, -5, 4}));
-
 }
 
-TEST (ArrayTest, K_Closest_Points_to_Origin) {
-    vector<vector<int>> points{{3,  3},
-                               {5,  -1},
-                               {-2, 4}};
-    aq.kClosest(points, 2);
+//TEST (ArrayTest, K_Closest_Points_to_Origin) {
+//    vector<vector<int>> points{{3,  3},
+//                               {5,  -1},
+//                               {-2, 4}};
+//    aq.kClosest(points, 2);
+//}
+
+TEST (ArrayTest, Trapping_Rain_Water) {
+    EXPECT_EQ(3, aq.trap({1, 2, 1, 0, 2}));
 }
