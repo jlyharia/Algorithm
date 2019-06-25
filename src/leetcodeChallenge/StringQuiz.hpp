@@ -46,6 +46,9 @@ public:
     // 38. Count and Say
     string countAndSay(int n);
 
+    // 224. Basic Calculator
+    int calculate(string s);
+
 private:
     int expandAroundCenter(string s, int begin, int end);
 

@@ -13,7 +13,6 @@ TEST (StringQuiz, Longest_Palindromic_Substring) {
     cout << sq.longestPalindrome("babad");
 }
 
-
 TEST (StringQuiz, ZigZag_Conversion) {
     EXPECT_EQ("PAHNAPLSIIGYIR", sq.convert("PAYPALISHIRING", 3));
     //PAHNAPLSIIGYIR
@@ -93,4 +92,9 @@ TEST (StringQuiz, Count_and_Say) {
     EXPECT_EQ("21", sq.countAndSay(3));
     EXPECT_EQ("1211", sq.countAndSay(4));
     EXPECT_EQ("111221", sq.countAndSay(5));
+}
+
+TEST (StringQuiz, Basic_Calculator) {
+    cout << "Basic_Calculator\n";
+    EXPECT_EQ(154, sq.calculate("(1+(41+5+24)-3 )+(6+ 80)"));
 }
