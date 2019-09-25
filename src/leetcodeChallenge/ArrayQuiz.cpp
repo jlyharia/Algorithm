@@ -44,7 +44,7 @@ int ArrayQuiz::lengthOfLongestSubstring(std::string s) {
  *
  * https://www.cnblogs.com/grandyang/p/4465932.html
  * https://leetcode.com/problems/median-of-two-sorted-arrays/discuss/2471/very-concise-ologminmn-iterative-solution-with-detailed-explanation
- * https://www.youtube.com/watch?v=LPFhl65R7ww&t=1013s
+ * https://www.youtube.com/watch?v=LPFhl65R7ww
  */
 double ArrayQuiz::findMedianSortedArrays(vector<int> &&nums1, vector<int> &&nums2) {
     int m = nums1.size();
