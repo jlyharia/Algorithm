@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.9)
+cmake_minimum_required(VERSION 3.15)
 
 project(Algorithm)
 # Enable debug symbols by default
@@ -14,7 +14,7 @@ endif ()
 
 message("-- Generator is " ${CMAKE_GENERATOR})
 message("-- Cmake system Type: " ${CMAKE_SYSTEM_NAME})
-message("-- Project binaray dir: " ${PROJECT_BINARY_DIR})
+message("-- Project binary dir: " ${PROJECT_BINARY_DIR})
 
 # Compiler Flag
 include(CheckCXXCompilerFlag)
